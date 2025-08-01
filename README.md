@@ -1,8 +1,8 @@
 # Genomic Data Threat Modeling for Cybersecurity and Privacy 
 
-The National Cybersecurity Center of Excellence (NCCoE) is working on genomic data processing :
+The National Cybersecurity Center of Excellence (NCCoE) is working on genomic data threat modeling and releasing the following volumes:
 
-1. **Genomic Threat Modeling** .
+1. **Executive Summary** .
 
 2. **Cybersecurity** .
 
