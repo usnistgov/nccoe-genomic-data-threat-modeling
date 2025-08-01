@@ -25,7 +25,7 @@ An Implementation for Genomic Data Sequencing and Analysis
 
 INITIAL PUBLIC DRAFT
 
-Includes `Executive Summary (A) <Vol_A/index.rst>`__; `Cybersecurity (B) that is currently available as DRAFT CSWP 35 <https://doi.org/10.6028/NIST.CSWP.35.ipd>`__; and `Privacy (C) <Vol_C/index.rst>`__
+Includes `Executive Summary (A) <Vol_A/index.html>`__; `Cybersecurity (B) that is currently available as DRAFT CSWP 35 <https://doi.org/10.6028/NIST.CSWP.35.ipd>`__; and `Privacy (C) <Vol_C/index.html>`__
 
 **Author ORCID iDs**
 
