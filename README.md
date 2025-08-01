@@ -11,4 +11,4 @@ The National Cybersecurity Center of Excellence (NCCoE) is working on genomic da
 , please visit our [project web page](https://www.nccoe.nist.gov/projects/cybersecurity-and-privacy-genomic-data).
 , please consider reading [our NIST IR](https://doi.org/10.6028/NIST.IR.8432).
 
-This repository will be used to publish NIST SP 1800-43.
+This repository will be used to publish supplemental materials for NIST SP 1800-43.
