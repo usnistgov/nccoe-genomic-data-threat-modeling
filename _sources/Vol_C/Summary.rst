@@ -1,0 +1,16 @@
+Summary
+=================
+
+In this paper, the National Institute of Standards and Technology (NIST) National Cybersecurity Center of Excellence (NCCoE) demonstrates genomic data threat modeling for sample environments involved in clinical or research genomic sequencing and data analysis. This iterative, flexible modeling approach focuses on identifying threats directly to system components and data transfers in comparison to risk modeling, which emphasizes understanding potential consequences. The process examines the characteristics and methods of potential attacks to understand how they might occur and what vulnerabilities they could exploit. This paper shows a privacy-specific implementation of a common four-step threat modeling process that can be emulated by other organizations. In each of the four questions below, “we” refers to the team performing the threat modeling. 
+
+1. Document **“What are we working on?”** with contextual descriptions and architecture captured using worksheets adapted from the NIST Privacy Risk Assessment Methodology (PRAM) [Ref1]_ and augmented dataflow diagrams for the genomic data processing environment (`Question 1 <PTM/Question1.html>`_).
+
+2. Evaluate **“What could go wrong?”** by identifying genomic data threats for both the clinical and research use cases using the LINDDUN [Ref2]_ and MITRE PANOPTIC [Ref3]_ frameworks and  documenting the results using an adapted NIST PRAM worksheet (`Question 2 <PTM/Question2.html>`_).
+
+3. Determine **“What are we going to do about it?”** by prioritizing the identified threats to help select initial targets for interventions leveraging the NIST Privacy Framework [Ref4]_, *NIST Genomic Data Profile* [Ref5]_ *,* and Special Publication 800-53r5 [Ref6]_ control catalog (`Question 3 <PTM/Question3.html>`_).
+
+4. Consider **“Did we do a good job?”** by reviewing the results of the threat modeling exercise and identifying potential additional activities, including further interventions or continuous monitoring (`Question 4 <PTM/Question4.html>`_).
+
+Organizations rely on genomic data processing to develop biotechnology and provide clinical diagnosis. Cybersecurity and privacy risks for genomic data are complicated by the nature of the data, which is immutable and includes kinship, health, and phenotype. Further, the genomic community constitutes a broad variety of stakeholders around the world including government, academia, and industry engaged in research, healthcare, law enforcement, and direct-to-consumer genetic testing. 
+
+This paper is part of an NCCoE SP 1800 series that was developed while engaging genomic data processing stakeholders to create practical guidelines that address related cybersecurity and privacy concerns. NIST Cybersecurity White Paper 35,\ * Cybersecurity Threat Modeling the Genomic Data Sequencing Workflow* [Ref7]_ pairs with this paper by providing similarly targeted guidelines from a cybersecurity perspective. The `NCCoE Genomic Data website <https://www.nccoe.nist.gov/projects/cybersecurity-and-privacy-genomic-data>`__ provides links to the overall project, including workshops and publications. Certain appendix content, containing additional resources and detailed information, is available through these NIST GitHub Pages. 

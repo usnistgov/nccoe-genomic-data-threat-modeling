@@ -1,0 +1,583 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Genomic Data Threat Modeling: Privacy &#8212; NCCoE Genomic Data Threat Modeling Project</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/content.css?v=59cd0ab0" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=60ee0719" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Vol_C/index';</script>
+    <script src="../_static/jquery.visible.js?v=5b129ffc"></script>
+    <script src="../_static/jquery.leaveNotice-nist.js?v=7cf1efa2"></script>
+    <script src="../_static/applyLeaveNotice.js?v=ca661b5e"></script>
+    <script src="../_static/smoothNavScroll.js?v=2ce98a12"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.min.js"></script>
+    <script src="../_static/main.js?v=74083827"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Summary" href="Summary.html" />
+    <link rel="prev" title="Executive Summary" href="../Vol_A/ExecutiveSummary.html" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+
+    <!-- Google tag (gtag.js) -->
+    <script async
+        src="https://www.googletagmanager.com/gtag/js?id=G-RJSMY46M5C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-RJSMY46M5C');
+
+    </script>
+    <!-- Old DAP UA tag -->
+    <script async type="text/javascript" id="_fed_an_ua_tag"
+        src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NIST&subagency=github&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c">
+    </script>
+    <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+    <link rel="stylesheet" type="text/css" href="https://pages.nist.gov/leaveNotice/css/jquery.leaveNotice.css" />
+    <script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer-v-2.0.js" type="text/javascript" defer="defer"></script>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">NCCoE Genomic Data Threat Modeling Project</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Genomic Data Threat Modeling
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Vol_A/ExecutiveSummary.html">Executive Summary</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Genomic Data Threat Modeling: Privacy</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Summary.html">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="PTM/index.html">Genomic Data Threat Modeling Example</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="PTM/Question1.html">Question 1: "What are we working on?"</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PTM/Question2.html">Question 2: "What could go wrong?"</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PTM/Question3.html">Question 3: "What are we going to do about it?"</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PTM/Question4.html">Question 4: "How did we do?"</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="Conclusion.html">Conclusion</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Appendix/index.html">Appendices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="Appendix/appendixA.html">Appendix A</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Appendix/appendixB.html">Appendix B</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Appendix/appendixC.html">Appendix C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Appendix/appendixD.html">Appendix D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Appendix/appendixE.html">Appendix E</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Appendix/appendixF.html">Appendix F</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Appendix/appendixG.html">Appendix G</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Vol_C/index.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Genomic Data Threat Modeling: Privacy</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-implementation-for-genomic-data-sequencing-and-analysis">An Implementation for Genomic Data Sequencing and Analysis</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="genomic-data-threat-modeling-privacy">
+<h1>Genomic Data Threat Modeling: Privacy<a class="headerlink" href="#genomic-data-threat-modeling-privacy" title="Link to this heading">#</a></h1>
+<section id="an-implementation-for-genomic-data-sequencing-and-analysis">
+<h2>An Implementation for Genomic Data Sequencing and Analysis<a class="headerlink" href="#an-implementation-for-genomic-data-sequencing-and-analysis" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This page is supplementary material for the <a class="reference external" href="https://doi.org/10.6028/NIST.SP.1800-43">NIST SP 1800-43 publication</a>.</p>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><strong>Ron Pulivarti</strong></p>
+<p><strong>Justin Wagner</strong></p>
+<p>National Institute</p>
+<p>of Standards and</p>
+<p>Technology</p>
+</td>
+<td><p><strong>Brett Kreider</strong></p>
+<p><strong>Stuart S. Shapiro</strong></p>
+<p><strong>Julie Nethery Snyder</strong></p>
+<p><strong>Kevin E. Wilson</strong></p>
+<p><strong>Martin Wojtyniak</strong></p>
+<p>MITRE Corporation</p>
+</td>
+<td><p><strong>Scott Ross</strong></p>
+<p><strong>Philip Whitlow</strong></p>
+<p>HudsonAlpha</p>
+</td>
+<td><p><strong>Isabelle Brown-Cantrell</strong></p>
+<p><strong>Patrick Pape</strong></p>
+<p><strong>Jared Sheldon</strong></p>
+<p>The University of</p>
+<p>Alabama in Huntsville</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<img alt="This graphic contains the logos for NIST and the NCCoE." src="../_images/Logos.png" />
+<p>INITIAL PUBLIC DRAFT</p>
+<p><strong>DISCLAIMER</strong></p>
+<p>Certain commercial entities, equipment, products, or materials may be identified by name or company logo or other insignia in order to acknowledge their participation in this collaboration or to describe an experimental procedure or concept adequately. Such identification is not intended to imply special status or relationship with NIST or recommendation or endorsement by NIST or NCCoE; neither is it intended to imply that the entities, equipment, products, or materials are necessarily the best available for the purpose.</p>
+<p>National Institute of Standards and Technology Special Publication 1800-43, Natl. Inst. Stand. Technol. Spec. Publ. 1800-43, 55 pages, (August 2025), CODEN: NSPUE2</p>
+<p><strong>NIST Technical Series Policies</strong>
+Copyright, Use, and Licensing Statements <a class="reference external" href="https://doi.org/10.6028/NIST-TECHPUBS.CROSSMARK-POLICY">NIST Tech Pubs Policy</a>
+NIST Technical Series Publication Identifier Syntax <a class="reference external" href="https://www.nist.gov/nist-research-library/nist-technical-series-publications-author-instructions#pubid">NIST Tech Pubs IDs</a></p>
+<p><strong>Author ORCID iDs</strong></p>
+<ul class="simple">
+<li><p>Ronald Pulivarti: 0000-0002-8330-3474</p></li>
+<li><p>Justin Wagner: 0009-0003-8903-0504</p></li>
+<li><p>Brett Kreider: 0009-0004-1508-5876</p></li>
+<li><p>Stuart Shapiro: 0000-0003-3676-7388</p></li>
+<li><p>Julie Nethery Snyder: 0009-0004-6352-2831</p></li>
+<li><p>Kevin Wilson: 0009-0008-3673-6040</p></li>
+<li><p>Martin Wojtyniak: 0009-0005-9643-2194</p></li>
+<li><p>Scott Ross: 0009-0002-8672-6496</p></li>
+<li><p>Philip Whitlow: 0009-0000-7677-3825</p></li>
+<li><p>Isabelle Brown-Cantrell: 0009-0004-8820-6448</p></li>
+<li><p>Patrick Pape: 0009-0005-4922-4026</p></li>
+<li><p>Jared Sheldon: 0009-0009-7909-4217</p></li>
+</ul>
+<p><strong>FEEDBACK</strong>
+You can view or download the draft guide at the <cite>NCCoE Genomics Project Page &lt;https://www.nccoe.nist.gov/projects/cybersecurity-and-privacy-genomic-data&gt;</cite>.</p>
+<p>Comments on this publication may be submitted to: <a class="reference external" href="mailto:genomic_cybersecurity_nccoe&#37;&#52;&#48;nist&#46;gov">genomic_cybersecurity_nccoe<span>&#64;</span>nist<span>&#46;</span>gov</a>.</p>
+<p>All comments are subject to release under the Freedom of Information Act. NIST welcomes feedback and input on any aspect of this document and additionally proposes a list of non-exhaustive questions and topics for consideration:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>How well does the threat modeling exercise in this guide relate to existing efforts in your organization? Are there significant gaps between the sets of practices that this guide should address?</p></li>
+<li><p>How do you expect this document to influence your future practices and processes?</p></li>
+<li><p>What changes would you like to see to increase or improve your organization’s use of this document?</p></li>
+<li><p>What suggestions do you have on changing the format of the information provided?</p></li>
+<li><p>Is the example provided here sufficient for your organization to identify and address genomic data threats in sequencing or data analysis? Are there changes or additional content that the authors should consider?</p></li>
+</ol>
+</div></blockquote>
+<div class="line-block">
+<div class="line">National Cybersecurity Center of Excellence</div>
+<div class="line">National Institute of Standards and Technology</div>
+<div class="line">100 Bureau Drive</div>
+<div class="line">Mailstop 2002</div>
+<div class="line">Gaithersburg, MD 20899</div>
+<div class="line">Email: <a class="reference external" href="mailto:nccoe&#37;&#52;&#48;nist&#46;gov">nccoe<span>&#64;</span>nist<span>&#46;</span>gov</a></div>
+</div>
+<p><strong>NATIONAL CYBERSECURITY CENTER OF EXCELLENCE</strong></p>
+<p>The National Cybersecurity Center of Excellence (NCCoE), a part of the National Institute of Standards and Technology (NIST), is a collaborative hub where industry organizations, government agencies, and academic institutions work together to address businesses’ most pressing cybersecurity issues. This public-private partnership enables the creation of practical cybersecurity solutions for specific industries, as well as for broad, cross-sector technology challenges. Through consortia under Cooperative Research and Development Agreements (CRADAs), including technology partners—from Fortune 50 market leaders to smaller companies specializing in information technology security—the NCCoE applies standards and best practices to develop modular, adaptable example cybersecurity solutions using commercially available technology. The NCCoE documents these example solutions in the NIST Special Publication 1800 series, which maps capabilities to the NIST Cybersecurity Framework and details the steps needed for another entity to re-create the example solution. The NCCoE was established in 2012 by NIST in partnership with the State of Maryland and Montgomery County, Maryland.</p>
+<p>To learn more about the NCCoE, visit <a class="reference external" href="https://www.nccoe.nist.gov/">https://www.nccoe.nist.gov/</a>. To learn more about NIST, visit <a class="reference external" href="https://www.nist.gov">https://www.nist.gov</a>.</p>
+<p><strong>NIST Cybersecurity Practice Guides</strong>
+NIST Cybersecurity Practice Guides (Special Publication 1800 series) target specific cybersecurity challenges in the public and private sectors. They are practical, user-friendly guides that facilitate the adoption of standards-based approaches to cybersecurity. They show members of the information security community how to implement example solutions that help them align with relevant standards and best practices, and provide users with the materials lists, configuration files, and other information they need to implement a similar approach.</p>
+<p>The documents in this series describe example implementations of cybersecurity practices that businesses and other organizations may voluntarily adopt. These documents do not describe regulations or mandatory practices, nor do they carry statutory authority.</p>
+<p><strong>ABSTRACT</strong></p>
+<p>This paper provides an example of how to conduct genomic data threat modeling for privacy on a data processing environment, including documenting the architecture, identifying threats, applying sample interventions, and iterating the process as needed. The paper complements the earlier NIST CSWP 35, Cybersecurity Threat Modeling the Genomic Data Sequencing Workflow.</p>
+<p><strong>KEYWORDS</strong></p>
+<p>Genomic privacy; genomic data threat modeling; Privacy Framework; DNA sequencing; genomics; genomic data; genomic sequencing; human genome; threat interventions.</p>
+<p><strong>ACKNOWLEDGMENTS</strong></p>
+<p>The authors would like to thank Dylan Gilbert, former Privacy Policy Advisor, NIST Privacy Engineering Program; Justin Zook, NIST Material Measurement Laboratory; and Meagan Cochran, HudsonAlpha Institute for Biotechnology; Cherilyn Pascoe, NIST/NCCoE; Diane Wertime, NIST; Gary Howarth, NIST; Hannah Zook, NIST; Sue Wang, NCCoE; Drew Keller, NCCoE.</p>
+<p><strong>DOCUMENT CONVENTIONS</strong></p>
+<p>The terms “shall” and “shall not” indicate requirements to be followed strictly to conform to the publication and from which no deviation is permitted. The terms “should” and “should not” indicate that among several possibilities, one is recommended as particularly suitable without mentioning or excluding others, or that a certain course of action is preferred but not necessarily required, or that (in the negative form) a certain possibility or course of action is discouraged but not prohibited. The terms “may” and “need not” indicate a course of action permissible within the limits of the publication. The terms “can” and “cannot” indicate a possibility and capability, whether material, physical, or causal.</p>
+<p><strong>CALL FOR PATENT CLAIMS</strong></p>
+<p>This public review includes a call for information on essential patent claims (claims whose use would be required for compliance with the guidance or requirements in this Information Technol-ogy Laboratory (ITL) draft publication). Such guidance and/or requirements may be directly stated in this ITL Publication or by reference to another publication. This call also includes disclosure, where known, of the existence of pending U.S. or foreign patent applications relating to this ITL draft publication and of any relevant unexpired U.S. or foreign patents.
+ITL may require from the patent holder, or a party authorized to make assurances on its behalf, in written or electronic form, either:
+a) assurance in the form of a general disclaimer to the effect that such party does not hold and does not currently intend holding any essential patent claim(s); or
+b) assurance that a license to such essential patent claim(s) will be made available to applicants de-siring to utilize the license for the purpose of complying with the guidance or requirements in this ITL draft publication either:
+1.      under reasonable terms and conditions that are demonstrably free of any unfair discrimina-tion; or
+2.      without compensation and under reasonable terms and conditions that are demonstrably free of any unfair discrimination.
+Such assurance shall indicate that the patent holder (or third party authorized to make assurances on its behalf) will include in any documents transferring ownership of patents subject to the assur-ance, provisions sufficient to ensure that the commitments in the assurance are binding on the transferee, and that the transferee will similarly include appropriate provisions in the event of fu-ture transfers with the goal of binding each successor-in-interest.
+The assurance shall also indicate that it is intended to be binding on succes-sors-in-interest regardless of whether such provisions are included in the relevant transfer docu-ments.
+Such statements should be addressed to: <a class="reference external" href="mailto:genomic_cybersecurity_nccoe&#37;&#52;&#48;nist&#46;gov">genomic_cybersecurity_nccoe<span>&#64;</span>nist<span>&#46;</span>gov</a></p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Vol_A/ExecutiveSummary.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Executive Summary</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Summary.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Summary</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-implementation-for-genomic-data-sequencing-and-analysis">An Implementation for Genomic Data Sequencing and Analysis</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<p>
+  
+    By NIST<br/>
+  
+</p>
+
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+<footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        <div class="disclaimer">
+          <strong>Disclaimer:</strong> Certain commercial equipment, instruments, or
+          materials are identified in this documentation to foster understanding. Such
+          identification does not imply recommendation or endorsement by the National
+          Institute of Standards and Technology, nor does it imply that the materials
+          or equipment identified are necessarily the best available for the purpose.
+        </div>
+      </p>
+    </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,1003 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Appendices &#8212; NCCoE Genomic Data Threat Modeling Project</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/content.css?v=59cd0ab0" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=60ee0719" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Vol_C/Appendix';</script>
+    <script src="../_static/jquery.visible.js?v=5b129ffc"></script>
+    <script src="../_static/jquery.leaveNotice-nist.js?v=7cf1efa2"></script>
+    <script src="../_static/applyLeaveNotice.js?v=ca661b5e"></script>
+    <script src="../_static/smoothNavScroll.js?v=2ce98a12"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.min.js"></script>
+    <script src="../_static/main.js?v=74083827"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+
+    <!-- Google tag (gtag.js) -->
+    <script async
+        src="https://www.googletagmanager.com/gtag/js?id=G-RJSMY46M5C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-RJSMY46M5C');
+
+    </script>
+    <!-- Old DAP UA tag -->
+    <script async type="text/javascript" id="_fed_an_ua_tag"
+        src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NIST&subagency=github&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c">
+    </script>
+    <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+    <link rel="stylesheet" type="text/css" href="https://pages.nist.gov/leaveNotice/css/jquery.leaveNotice.css" />
+    <script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer-v-2.0.js" type="text/javascript" defer="defer"></script>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">NCCoE Genomic Data Threat Modeling Project</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Genomic Data Threat Modeling
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Vol_A/ExecutiveSummary.html">Executive Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="index.html">Genomic Data Threat Modeling: Privacy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Summary.html">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="PTM/index.html">Genomic Data Threat Modeling Example</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="PTM/Question1.html">Question 1: "What are we working on?"</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PTM/Question2.html">Question 2: "What could go wrong?"</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PTM/Question3.html">Question 3: "What are we going to do about it?"</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PTM/Question4.html">Question 4: "How did we do?"</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="Conclusion.html">Conclusion</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Appendix/index.html">Appendices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="Appendix/appendixA.html">Appendix A</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Appendix/appendixB.html">Appendix B</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Appendix/appendixC.html">Appendix C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Appendix/appendixD.html">Appendix D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Appendix/appendixE.html">Appendix E</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Appendix/appendixF.html">Appendix F</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Appendix/appendixG.html">Appendix G</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Vol_C/Appendix.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Appendices</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Appendices</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-a-abbreviations-and-acronyms">Appendix A: Abbreviations and Acronyms</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#threat-modeling-approach">Threat Modeling Approach</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#privacy-threat-modeling">Privacy Threat Modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linddun">LINDDUN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mitre-panoptic">MITRE PANOPTIC™</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nist-privacy-risk-assessment-methodology-pram">NIST Privacy Risk Assessment Methodology (PRAM)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organizational-tailoring">Organizational Tailoring</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-overview">Methodology Overview</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#system-description">System Description</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#panoptic-contextual-mapping-for-clinical-use-case">PANOPTIC Contextual Mapping for Clinical Use Case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#panoptic-contextual-mapping-for-research-use-case">PANOPTIC Contextual Mapping for Research Use Case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataflow-diagram-legend">Dataflow Diagram Legend</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataflow-diagram-for-clinical-use-case">Dataflow Diagram for Clinical Use Case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataflow-diagram-for-research-physical-use-case">Dataflow Diagram for Research Physical Use Case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataflow-diagram-for-research-digital-use-case">Dataflow Diagram for Research Digital Use Case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-dataflow-diagram">Shared Dataflow Diagram</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataflow-analysis">Dataflow Analysis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataflow-analysis-for-clinical-use-case">Dataflow Analysis for Clinical Use Case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataflow-analysis-for-research-use-case">Dataflow Analysis for Research Use Case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-dataflow-analysis">Shared Dataflow Analysis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-and-sorted-dataflow-analysis">Integrated and Sorted Dataflow Analysis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#panoptic-privacy-activities-mapping-for-clinical-use-case">PANOPTIC Privacy Activities Mapping for Clinical Use Case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#panoptic-privacy-activities-mapping-for-research-use-case">PANOPTIC Privacy Activities Mapping for Research Use Case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#scenarios">Scenarios</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#threat-validation-and-prioritization">Threat Validation and Prioritization</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#panoptic-linddun-mapping">PANOPTIC – LINDDUN Mapping</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#threat-validations-and-ranking-attributes">Threat Validations and Ranking Attributes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ranked-threats">Ranked Threats</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="appendices">
+<h1>Appendices<a class="headerlink" href="#appendices" title="Link to this heading">#</a></h1>
+<section id="appendix-a-abbreviations-and-acronyms">
+<h2>Appendix A: Abbreviations and Acronyms<a class="headerlink" href="#appendix-a-abbreviations-and-acronyms" title="Link to this heading">#</a></h2>
+<p>The following acronyms are used in this publication.</p>
+<p><strong>ATT&amp;CK</strong></p>
+<p><strong>Adversarial Tactics, Techniques &amp; Common Knowledge</strong></p>
+<p><strong>CAP</strong></p>
+<p>College of American Pathologists</p>
+<p><strong>CLIA</strong></p>
+<p>Clinical Laboratory Improvement Amendments</p>
+<p>DFD</p>
+<p>Dataflow Diagram</p>
+<p><strong>DMZ</strong></p>
+<p>Demilitarized Zone</p>
+<p>DNA</p>
+<p>Deoxyribonucleic acid</p>
+<p><strong>FDA</strong></p>
+<p>Food and Drug Administration</p>
+<p><strong>GCP</strong></p>
+<p>Good Clinical Practice</p>
+<p><strong>GDPR</strong></p>
+<p>EU General Data Protection Regulation</p>
+<p><strong>GINA</strong></p>
+<p>Genetic Information Nondiscrimination Act of 2008</p>
+<p><strong>HIPAA</strong></p>
+<p>Health Insurance Portability and Accountability Act</p>
+<p><strong>IR</strong></p>
+<p>Internal Report</p>
+<p><strong>IRB</strong></p>
+<p>Institutional Review Board</p>
+<p>LIMS</p>
+<p>Laboratory Information Management System</p>
+<p><strong>LINDDUN</strong></p>
+<p>Linking, Identifying, Detecting, Data Disclosure, Unawareness and Unintervenability, and Non-compliance privacy threat types</p>
+<p>MO</p>
+<p>Mission Objective</p>
+<p>NCCoE</p>
+<p>National Cybersecurity Center of Excellence</p>
+<p>NIH</p>
+<p>National Institutes of Health</p>
+<p>NIST</p>
+<p>National Institute of Standards and Technology</p>
+<p>OSS</p>
+<p>Open-Source Software</p>
+<p><strong>PANOPTIC</strong></p>
+<p>Pattern and Action Nomenclature Of Privacy Threats In Context</p>
+<p><strong>PEO</strong></p>
+<p>Privacy Engineering Objective</p>
+<p><strong>PET</strong></p>
+<p>Privacy-Enhancing Technology</p>
+<p><strong>PF</strong></p>
+<p>NIST Privacy Framework</p>
+<p><strong>PRAM</strong></p>
+<p>Privacy Risk Assessment Methodology</p>
+<p>SP</p>
+<p>NIST Special Publication</p>
+<p>STRIDE</p>
+<p>Spoofing, Tampering, Repudiation, Information Disclosure, and Elevation of Privilege cybersecurity threat types</p>
+<p><strong>SQL</strong></p>
+<p>Structured Query Language</p>
+<p><strong>TRF</strong></p>
+<p>Test Request Form</p>
+</section>
+</section>
+<section id="threat-modeling-approach">
+<h1>Threat Modeling Approach<a class="headerlink" href="#threat-modeling-approach" title="Link to this heading">#</a></h1>
+<p>As some genomic sequencers are classified as medical devices, the cybersecurity paper used the threat modeling approach described in the <em>Playbook for Threat Modeling Medical Devices (Playbook)</em> <em>[18]</em> based on methods described in the “Threat Modeling Manifesto” <em>[19]</em> and by Shostack <em>[17]</em>. However, as noted above, privacy, though connected to cybersecurity, is distinct from it. Therefore, while this paper adheres to the high-level approaches of the Four Question Framework and the Threat Modeling Manifesto, it employs tools that are specific to privacy.</p>
+<p>This figure illustrates The Four Questions Framework for Threat Modeling. It starts with Question 1: What are we working on? From there, Question 2 is What could go wrong? Question 3 is What are we going to do about it? And Question 4 is Did we do a good job? The questions interconnect and will be revisited iteratively to improve the results.|<a href="#id1"><span class="problematic" id="id2">|</span></a>This figure illustrates The Four Questions Framework for Threat Modeling. It starts with Question 1: What are we working on? From there, Question 2 is What could go wrong? Question 3 is What are we going to do about it? And Question 4 is Did we do a good job? The questions interconnect and will be revisited iteratively to improve the results.</p>
+<p>It is expected that users of this process aiming to leverage the outputs documented in this paper will modify and adjust them to reflect differences between their environments and the baseline one described here. In particular, this threat model is intended for various stakeholders who have differing priorities with respect to the same threats. Organizations will choose specific responses, including interventions, depending on:</p>
+<ul class="simple">
+<li><p>their mission;</p></li>
+<li><p>their goals in performing the threat modeling process;</p></li>
+<li><p>the priorities that reflect their specific use case;</p></li>
+<li><p>the phase of the system life cycle; and</p></li>
+<li><p>the resources at their disposal.</p></li>
+</ul>
+<p>Therefore, a comprehensive list of interventions and answers to Question 3 will not be provided in this paper. <a class="reference external" href="#_Response_Determination">Section 4.2</a> discusses the intervention identification process along with resources and an illustrative example. Individual organizations can also incorporate the threats into their risk modeling and assessment processes, addressing the resultant risks through elimination, mitigation, transfer, or acceptance.</p>
+<section id="privacy-threat-modeling">
+<h2>Privacy Threat Modeling<a class="headerlink" href="#privacy-threat-modeling" title="Link to this heading">#</a></h2>
+<p>Key characteristics of privacy threats are a superset of the characteristics of cybersecurity threats. Cybersecurity threats typically involve the actions of a malicious entity that is external to the system proper. This can be true of privacy threats as well, but not necessarily. While privacy threats can be active, they can also involve inactions, such as a failure to provide relevant information to direct data subjects or to obtain their consent for the collection and use of their data. Malicious privacy threats are certainly not unheard of, but privacy threats are just as often side effects of the pursuit of other objectives. Additionally, while threat actors can be external entities, sometimes it is the system itself, operating as designed, that poses the threat. One such privacy threat is insufficient de-identification, where the identity of an individual in a sensitive dataset, such as a rare disease database, can be determined using metadata and information from open-access or controlled-access genomic databases <em>[15]</em>.</p>
+<p>As a result of these possibilities, privacy threat modeling must adopt a broader perspective than cybersecurity threat modeling. This broader perspective is reflected in the principal tools employed – the NIST PRAM <em>[1]</em>, LINDDUN <em>[2]</em>, and MITRE PANOPTIC™ <em>[3]</em>– each of which are described in the following subsections. Two of those tools, LINDDUN and PANOPTIC, were also selected because they roughly mirror the orientations of the tools – STRIDE <em>[16]</em> and MITRE ATT&amp;CK® <em>[17]</em> respectively – that were used for the cybersecurity threat modeling in NIST CSWP 35 <em>[6]</em>.</p>
+<section id="linddun">
+<h3>LINDDUN<a class="headerlink" href="#linddun" title="Link to this heading">#</a></h3>
+<p>LINDDUN <em>[2]</em> is one of the earliest and most widely recognized privacy threat modeling tools. Inspired by STRIDE <em>[12]</em>, the name is an acronym comprising seven different privacy threat types:</p>
+<ul class="simple">
+<li><p>Linking – Learning more about an individual (<em>or a group</em>) by associating related data items with one another</p></li>
+<li><p>Identifying – Identity of an individual can be learned through leaks, deduced, or inferred when that is undesirable</p></li>
+<li><p>Non-repudiation <a class="footnote-reference brackets" href="#id8" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> – An individual is unable to deny certain claims pertaining to them as a result of data collected, data shared, or a system action taken by the individual or others</p></li>
+<li><p>Detecting – Becoming aware of an individual’s involvement, membership, or participation via observation of relevant information</p></li>
+<li><p>Data disclosure – Avoidable transfer of an individual’s data across a boundary, whether intended or unintended</p></li>
+<li><p>Unawareness and unintervenability – Insufficiently informing, involving, or empowering the individual with respect to their role and relation to the system</p></li>
+<li><p>Non-compliance – Lack of adherence to statutory or regulatory requirements or to standards or best practices</p></li>
+</ul>
+<p>LINDDUN <em>[2]</em> heavily relies on DFDs, which are especially useful for data privacy analyses. Like STRIDE-per-Element <em>[12]</em>, DFD elements vary in their relevance for different threat types. LINDDUN comes with a catalog of detailed threat trees that break down the high-level threat types into more granular threats that can be associated with specific DFD segments <em>[2]</em>.</p>
+</section>
+<section id="mitre-panoptic">
+<h3>MITRE PANOPTIC™<a class="headerlink" href="#mitre-panoptic" title="Link to this heading">#</a></h3>
+<p>Just as LINDDUN <em>[2]</em> roughly mirrors STRIDE <em>[16]</em>, PANOPTIC <em>[3]</em> roughly mirrors MITRE ATT&amp;CK <em>[17]</em>. Like ATT&amp;CK, PANOPTIC (Pattern and Action Nomenclature Of Privacy Threats In Context) was created from the bottom up based on real-world privacy attacks drawn from multiple sources. However, PANOPTIC looks and works rather differently. PANOPTIC consists of two closely related taxonomies: Contextual Domains (made up of contextual elements) and Privacy Activities (made up of privacy threat actions). The Contextual Domains, as the name suggests, capture important contextual aspects of the system of concern, including how it interacts with data subjects and the nature of the data. Privacy Activities describe the various components of a privacy attack and are a mixture of Fair Information Practice Principles, information life cycle stages such as collection and processing, and independent components such as identification. Contextual elements and privacy threat actions may have sub-elements and sub-actions respectively. <em>Table 23</em> lists the Contextual Domains and definitions while <em>Table 24</em> lists the Privacy Activities and definitions. <a class="footnote-reference brackets" href="#id9" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
+<div class="pst-scrollable-table-container"><table class="table" id="id13">
+<caption><span class="caption-text">Table 23. PANOPTIC V2.0 Contextual Domains</span><a class="headerlink" href="#id13" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>ID</strong></p></th>
+<th class="head"><p><strong>Contextual Domain</strong></p></th>
+<th class="head"><p><strong>Definition</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PC01</p></td>
+<td><p>Environment</p></td>
+<td><p>The type of contextual domain in which data actions <a class="footnote-reference brackets" href="#id10" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> occur</p></td>
+</tr>
+<tr class="row-odd"><td><p>PC02</p></td>
+<td><p>Distribution</p></td>
+<td><p>How many entities with which the information holder shares information</p></td>
+</tr>
+<tr class="row-even"><td><p>PC03</p></td>
+<td><p>Interaction</p></td>
+<td><p>The extent to which the data subject or their proxy interacts with the data custodian, processor, third-party, or their proxy (entities other than the data subject)</p></td>
+</tr>
+<tr class="row-odd"><td><p>PC04</p></td>
+<td><p>Engagement</p></td>
+<td><p>Targeted subpopulations with which the entity or their proxy interact</p></td>
+</tr>
+<tr class="row-even"><td><p>PC05</p></td>
+<td><p>Data Type</p></td>
+<td><p>Classes of data upon which data actions are performed</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table" id="id14">
+<caption><span class="caption-text">Table 24. PANOPTIC V2.0 Privacy Activities</span><a class="headerlink" href="#id14" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>ID</strong></p></th>
+<th class="head"><p><strong>Privacy Activity</strong></p></th>
+<th class="head"><p><strong>Definition</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PA01</p></td>
+<td><p>Notice</p></td>
+<td><p>Informing the data subject or their proxy of one or more data actions</p></td>
+</tr>
+<tr class="row-odd"><td><p>PA02</p></td>
+<td><p>Consent</p></td>
+<td><p>Assent from the data subject or their proxy to one or more defined data actions</p></td>
+</tr>
+<tr class="row-even"><td><p>PA03</p></td>
+<td><p>Collection</p></td>
+<td><p>The gathering or extraction of information</p></td>
+</tr>
+<tr class="row-odd"><td><p>PA04</p></td>
+<td><p>Insecurity</p></td>
+<td><p>Insufficient data protection controls</p></td>
+</tr>
+<tr class="row-even"><td><p>PA05</p></td>
+<td><p>Identification</p></td>
+<td><p>How information is associated with the data subject</p></td>
+</tr>
+<tr class="row-odd"><td><p>PA06</p></td>
+<td><p>Quality Assurance</p></td>
+<td><p>Implementing policies or processes to ensure quality throughout privacy-related activities</p></td>
+</tr>
+<tr class="row-even"><td><p>PA07</p></td>
+<td><p>Manageability <a class="footnote-reference brackets" href="#id11" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p></td>
+<td><p>Enabling the data subject or their proxy to access, modify, copy, or destroy information about themselves</p></td>
+</tr>
+<tr class="row-odd"><td><p>PA08</p></td>
+<td><p>Aggregation</p></td>
+<td><p>Assembling data from one or more sets of data</p></td>
+</tr>
+<tr class="row-even"><td><p>PA09</p></td>
+<td><p>Processing</p></td>
+<td><p>Extracting and developing value and utility from information</p></td>
+</tr>
+<tr class="row-odd"><td><p>PA10</p></td>
+<td><p>Sharing</p></td>
+<td><p>Making information available to another entity</p></td>
+</tr>
+<tr class="row-even"><td><p>PA11</p></td>
+<td><p>Use</p></td>
+<td><p>Leveraging information to achieve a goal</p></td>
+</tr>
+<tr class="row-odd"><td><p>PA12</p></td>
+<td><p>Retention &amp; Destruction</p></td>
+<td><p>Actions that affect the persistence of information</p></td>
+</tr>
+<tr class="row-even"><td><p>PA13</p></td>
+<td><p>Deviations</p></td>
+<td><p>Data action diverges from established limits bounding the data action in question</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="nist-privacy-risk-assessment-methodology-pram">
+<h3>NIST Privacy Risk Assessment Methodology (PRAM)<a class="headerlink" href="#nist-privacy-risk-assessment-methodology-pram" title="Link to this heading">#</a></h3>
+<p>The NIST PRAM <em>[1]</em> is a product of NIST’s Privacy Engineering Program. It is a multi-step process for identifying system privacy risks and is supported by a set of four worksheets:</p>
+<ol class="arabic simple">
+<li><p>Framing Business Objectives &amp; Organizational Privacy Governance</p></li>
+<li><p>Assessing System Design (includes separate Supporting Data Map)</p></li>
+<li><p>Prioritizing Risk</p></li>
+<li><p>Selecting Controls</p></li>
+</ol>
+<p>The PRAM also leverages a non-exhaustive privacy risk model consisting of defined “Problematic Data Actions” – particular manifestations of the higher-level data actions corresponding to stages of the information life cycle <a class="footnote-reference brackets" href="#id12" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>, which could enable adverse effects for individuals – and “Problems for Individuals,” those adverse consequences. The PRAM is intended to help ensure systems reflect the PEOs listed in <a class="reference external" href="#_Privacy_Overview">Section 1.3</a>.</p>
+<p>As a risk modeling tool, the PRAM is broader than threat modeling. However, aspects of it can be readily adapted to directly accommodate privacy threat modeling. Therefore, the first two worksheets enumerated above were modified as necessary and used as the principal means of documenting the threat modeling described in this paper.</p>
+</section>
+</section>
+<section id="organizational-tailoring">
+<h2>Organizational Tailoring<a class="headerlink" href="#organizational-tailoring" title="Link to this heading">#</a></h2>
+<p>Organizations that process genomic data need to protect that data due to its high value and the privacy risk to individuals. Organizations need a process to guide the selection of appropriate capabilities to reduce privacy risk to an acceptable level for the predictability, manageability, and disassociability of systems that process genomic data. Each organization should consider its own goals and priorities when tailoring this example to select and implement appropriate and cost-effective privacy capabilities and threat interventions. The organization should also periodically reassess its privacy posture and update its threat modeling as necessary, considering new technologies and threats to identify gaps and reprioritize interventions.</p>
+<p>NIST IR 8467, the <em>Genomic Data Profile</em> <em>[4]</em><em>,</em> provides a prioritized list of Mission Objectives (MOs) for organizations processing genomic data and prioritizes NIST Privacy Framework (PF) version 1.0 Subcategories (or outcomes) to support achieving those MOs. Based on the workflow of sequencing genomic material, the NCCoE team selected four relevant MOs from the <em>Genomic Data Profile</em> <em>[4]</em>, shown in <em>Table 25.</em> However, depending on their context, organizations may choose to prioritize an alternative set of MOs.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id15">
+<caption><span class="caption-text">Table 25. Selected Genomic Sequencing Workflow Mission Objectives</span><a class="headerlink" href="#id15" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Mission Objective from the Genomic Data Profile</p></th>
+<th class="head"><p>Mission Objective Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Manage privacy risk to existing and future relatives</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Identify, model, and address cybersecurity and privacy risks of processing genomic data</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Manage privacy risk to donors</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>Promote the use of privacy-enhancing technologies as well as secure technologies for sharing genomic data</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>When answering Question 3 (What are we going to do about it?) of the Four Question Framework these MOs can be used to prioritize potential controls that might be employed to disrupt threats.</p>
+</section>
+</section>
+<section id="methodology-overview">
+<h1>Methodology Overview<a class="headerlink" href="#methodology-overview" title="Link to this heading">#</a></h1>
+<p>This appendix summarizes the methodology presented in the body of the paper for easy reference. Note that while this methodology is presented sequentially, it is often iterative in practice.</p>
+<p><em>Question 1: What are we working on?</em></p>
+<ol class="arabic simple">
+<li><p>Define the target of the threat modeling by identifying system boundaries. Note that the target may constitute a system of systems. Also identify the relevant Mission Objectives from the NIST <em>Genomic Data Profile.</em></p></li>
+<li><p>Identify the different use cases.</p></li>
+<li><p>Complete PRAM Worksheet 1 to capture organizational objectives and privacy governance.</p></li>
+<li><p>Document system context.</p>
+<ol class="loweralpha simple">
+<li><p>In adapted PRAM Worksheet 2, complete System Privacy Capabilities related to the NIST Privacy Engineering Objectives (PEOs) for each use case. Include the security objectives if cybersecurity threat modeling is not being performed separately.</p></li>
+<li><p>Create a PANOPTIC Contextual Domains mapping for the system using the PANOPTIC mapping template.</p></li>
+<li><p>Complete Contextual Factors in Worksheet 2, leveraging responses in Worksheet 1 and the PANOPTIC Contextual Domains mapping.</p></li>
+</ol>
+</li>
+<li><p>Create dataflow diagrams (DFDs) for the different use cases (including a shared DFD if there is a high degree of commonality across the pipelines of the different use cases).</p>
+<ol class="loweralpha simple">
+<li><p>Associate each component with a managing entity and each discrete dataflow with descriptive data actions.</p></li>
+<li><p>Organize the diagrams using PRAM data actions as swim lanes: collection, generation/transformation, retention/logging, disclosure/transfer, disposal.</p></li>
+<li><p>Create indices of components and any distinguishing sub-cases and label DFD sources and destinations accordingly.</p></li>
+</ol>
+</li>
+</ol>
+<p><em>Question 2: What could go wrong?</em></p>
+<ol class="arabic simple" start="6">
+<li><p>Using the Assess System Design sheet in Worksheet 2, document each DFD segment – source, flow, destination – including data actions and relevant context. If preferred, use a separate sheet for each DFD.</p></li>
+<li><p>Identify potential LINDDUN threats for each dataflow segment entry using the LINDDUN threat trees. Ensure that all identified threats are defined from the perspective of the data subject. Create duplicate entries to accommodate multiple threats.</p></li>
+<li><p>Combine the LINDDUN analyses of the individual DFDs (if applicable) and group the entries by sorting on the LINDDUN threat designation.</p></li>
+<li><p>Create a PANOPTIC Privacy Activities mapping for each use case using the PANOPTIC mapping template. In doing so, identify relevant or potentially relevant threat actions that could form a privacy attack on one or more data subjects and define scenarios for specific sets of threat actions that could constitute attacks.</p></li>
+<li><p>Validate all threats:</p>
+<ol class="loweralpha simple">
+<li><p>Leveraging the PANOPTIC – LINDDUN mapping, confirm that there is at least one entry in the combined LINDDUN analysis table related to each PANOPTIC attack. Eliminate from further consideration attacks without a corresponding LINDDUN threat. Eliminate from further consideration LINDDUN threats unrelated to any PANOPTIC attack.</p></li>
+<li><p>For each remaining threat, confirm that it threatens one or more PEO. Eliminate from further consideration any threats that would not undermine at least one PEO.</p></li>
+</ol>
+</li>
+</ol>
+<p><em>Question 3: What are we going to do about it?</em></p>
+<ol class="arabic simple" start="11">
+<li><p>Prioritize threats</p>
+<ol class="loweralpha simple">
+<li><p>Assign categorical values for feasibility and difficulty to each validated threat.</p></li>
+<li><p>Adjust the attack feasibility-difficulty matrix values and/or LINDDUN threat weights if necessary.</p></li>
+<li><p>Rank order the threats by sorting on computed prioritization values (multiplying the feasibility-difficulty value by the LINDDUN threat weight). List threats from highest to lowest value.</p></li>
+</ol>
+</li>
+<li><p>Determine threat responses – eliminate, disrupt, transfer, or accept – starting from the highest priority threat and moving down the list.</p></li>
+<li><p>If opting to disrupt a threat:</p>
+<ol class="loweralpha simple">
+<li><p>Identify one or more critical threat actions of the PANOPTIC attack.</p></li>
+<li><p>Find the NIST Privacy Framework Subcategories associated with each critical threat action. Rank order the Subcategories based on the priorities associated with the selected Mission Objectives in the <em>Genomic Data Profile.</em></p></li>
+<li><p>In order of Subcategory priority, use the NIST PF – SP 800-53r5 crosswalk to review controls that are relevant for each Subcategory. Select those controls that most directly address the threat action(s).</p></li>
+<li><p>Note that selected controls are likely to disrupt other, similar attacks.</p></li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="system-description">
+<h1>System Description<a class="headerlink" href="#system-description" title="Link to this heading">#</a></h1>
+</section>
+<section id="panoptic-contextual-mapping-for-clinical-use-case">
+<h1>PANOPTIC Contextual Mapping for Clinical Use Case<a class="headerlink" href="#panoptic-contextual-mapping-for-clinical-use-case" title="Link to this heading">#</a></h1>
+<a class="reference internal image-reference" href="../_images/Appendix-Figure2.gif"><img alt="../_images/Appendix-Figure2.gif" src="../_images/Appendix-Figure2.gif" style="width: 4.66663in; height: 8.09198in;" />
+</a>
+</section>
+<section id="panoptic-contextual-mapping-for-research-use-case">
+<h1>PANOPTIC Contextual Mapping for Research Use Case<a class="headerlink" href="#panoptic-contextual-mapping-for-research-use-case" title="Link to this heading">#</a></h1>
+<a class="reference internal image-reference" href="../_images/Appendix-Figure3.gif"><img alt="../_images/Appendix-Figure3.gif" src="../_images/Appendix-Figure3.gif" style="width: 6.5in; height: 4.27847in;" />
+</a>
+</section>
+<section id="dataflow-diagram-legend">
+<h1>Dataflow Diagram Legend<a class="headerlink" href="#dataflow-diagram-legend" title="Link to this heading">#</a></h1>
+<p>Table 25. Symbols Used in Detailed DFDs</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id16">
+<caption><span class="caption-text">Table 2. Symbols Used in Detailed DFDsData Flow Diagrams (DFDs) created by the team to document their work, showing trust boundaries and communication paths. These diagrams support STRIDE threat analysis and help create a common architecture document for collaboration. They follow conventions</span><a class="headerlink" href="#id16" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Element</strong></p></th>
+<th class="head"><p><strong>Symbol</strong></p></th>
+<th class="head"><p><strong>Discussion</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>External Entity</p></td>
+<td><img alt="../_images/Appendix-DFDTable-Icon1.png" src="../_images/Appendix-DFDTable-Icon1.png" />
+</td>
+<td><p><strong>Object:</strong> A sharp-cornered rectangle.</p>
+<p><strong>Represents:</strong> Anything outside your control. Examples include people and systems run by other organizations or even divisions.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Process</p></td>
+<td><img alt="../_images/Appendix-DFDTable-Icon2.png" src="../_images/Appendix-DFDTable-Icon2.png" />
+</td>
+<td><p><strong>Object:</strong> A rounded rectangle.</p>
+<p><strong>Represents:</strong> Any digital or physical process that generates or manipulates data, including running code, scripts, shell commands, Structured Query Language (SQL) queries, et cetera.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Data Store</p></td>
+<td><img alt="../_images/Appendix-DFDTable-Icon3.png" src="../_images/Appendix-DFDTable-Icon3.png" />
+</td>
+<td><p><strong>Object:</strong> A drum.</p>
+<p><strong>Represents:</strong> Anywhere data are stored, including files, databases, shared memory, cloud storage services, cookies, et cetera.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Dataflows</p></td>
+<td><img alt="../_images/Appendix-DFDTable-Icon4.png" src="../_images/Appendix-DFDTable-Icon4.png" />
+</td>
+<td><p><strong>Object:</strong> A double-headed arrow.</p>
+<p><strong>Represents:</strong> All the ways that components can exchange data with one another. If a flow is unidirectional, you can represent the sending side as an empty arrow.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Human Actor</p></td>
+<td><img alt="../_images/Appendix-DFDTable-Icon5.png" src="../_images/Appendix-DFDTable-Icon5.png" />
+</td>
+<td><p><strong>Object:</strong> A stick figure.</p>
+<p><strong>Represents:</strong> Any human actor in the environment.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Each two-dimensional object with solid lines represents a <strong>component</strong>. All lines connecting components represent <strong>dataflows</strong> that can be either digital or physical (such as a network connection or a human inserting a physical sample into a sequencer). Dataflows are shown as double-headed arrows. A <strong>hollow arrow</strong> on one side of a given dataflow implies that the component on that side of the dataflow is the exclusive source.</p>
+</section>
+<section id="dataflow-diagram-for-clinical-use-case">
+<h1>Dataflow Diagram for Clinical Use Case<a class="headerlink" href="#dataflow-diagram-for-clinical-use-case" title="Link to this heading">#</a></h1>
+<a class="reference internal image-reference" href="../_images/Appendix-Figure4.gif"><img alt="../_images/Appendix-Figure4.gif" src="../_images/Appendix-Figure4.gif" style="width: 4.98098in; height: 8.61173in;" />
+</a>
+</section>
+<section id="dataflow-diagram-for-research-physical-use-case">
+<h1>Dataflow Diagram for Research Physical Use Case<a class="headerlink" href="#dataflow-diagram-for-research-physical-use-case" title="Link to this heading">#</a></h1>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/Appendix-Figure5.gif"><img alt="../_images/Appendix-Figure5.gif" src="../_images/Appendix-Figure5.gif" style="width: 6.5in; height: 4.27847in;" />
+</a>
+</figure>
+</section>
+<section id="dataflow-diagram-for-research-digital-use-case">
+<h1>Dataflow Diagram for Research Digital Use Case<a class="headerlink" href="#dataflow-diagram-for-research-digital-use-case" title="Link to this heading">#</a></h1>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/Appendix-Figure6.gif"><img alt="../_images/Appendix-Figure6.gif" src="../_images/Appendix-Figure6.gif" style="width: 6.5in; height: 4.27847in;" />
+</a>
+</figure>
+</section>
+<section id="shared-dataflow-diagram">
+<h1>Shared Dataflow Diagram<a class="headerlink" href="#shared-dataflow-diagram" title="Link to this heading">#</a></h1>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/Appendix-Figure7.gif"><img alt="../_images/Appendix-Figure7.gif" src="../_images/Appendix-Figure7.gif" style="width: 6.5in; height: 4.27847in;" />
+</a>
+</figure>
+</section>
+<section id="dataflow-analysis">
+<h1>Dataflow Analysis<a class="headerlink" href="#dataflow-analysis" title="Link to this heading">#</a></h1>
+</section>
+<section id="dataflow-analysis-for-clinical-use-case">
+<h1>Dataflow Analysis for Clinical Use Case<a class="headerlink" href="#dataflow-analysis-for-clinical-use-case" title="Link to this heading">#</a></h1>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/Appendix-Figure8.gif"><img alt="../_images/Appendix-Figure8.gif" src="../_images/Appendix-Figure8.gif" style="width: 6.5in; height: 4.27847in;" />
+</a>
+</figure>
+</section>
+<section id="dataflow-analysis-for-research-use-case">
+<h1>Dataflow Analysis for Research Use Case<a class="headerlink" href="#dataflow-analysis-for-research-use-case" title="Link to this heading">#</a></h1>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/Appendix-Figure9.gif"><img alt="../_images/Appendix-Figure9.gif" src="../_images/Appendix-Figure9.gif" style="width: 6.5in; height: 4.27847in;" />
+</a>
+</figure>
+</section>
+<section id="shared-dataflow-analysis">
+<h1>Shared Dataflow Analysis<a class="headerlink" href="#shared-dataflow-analysis" title="Link to this heading">#</a></h1>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/Appendix-Figure10.gif"><img alt="../_images/Appendix-Figure10.gif" src="../_images/Appendix-Figure10.gif" style="width: 6.5in; height: 4.27847in;" />
+</a>
+</figure>
+</section>
+<section id="integrated-and-sorted-dataflow-analysis">
+<h1>Integrated and Sorted Dataflow Analysis<a class="headerlink" href="#integrated-and-sorted-dataflow-analysis" title="Link to this heading">#</a></h1>
+<a class="reference internal image-reference" href="../_images/Appendix-Figure11.gif"><img alt="../_images/Appendix-Figure11.gif" src="../_images/Appendix-Figure11.gif" style="width: 8.49408in; height: 6.13639in;" />
+</a>
+<p><a href="#id17"><span class="problematic" id="id18">|.. image:: media/Appendix-Figure12.gif|</span></a> <a href="#id19"><span class="problematic" id="id20">|.. image:: media/Appendix-Figure13.gif|</span></a></p>
+</section>
+<section id="panoptic-privacy-activities-mapping-for-clinical-use-case">
+<h1>PANOPTIC Privacy Activities Mapping for Clinical Use Case<a class="headerlink" href="#panoptic-privacy-activities-mapping-for-clinical-use-case" title="Link to this heading">#</a></h1>
+<p><a href="#id21"><span class="problematic" id="id22">|.. image:: media/Appendix-Figure14.gif|</span></a> <a href="#id23"><span class="problematic" id="id24">|.. image:: media/Appendix-Figure15.gif|</span></a></p>
+</section>
+<section id="panoptic-privacy-activities-mapping-for-research-use-case">
+<h1>PANOPTIC Privacy Activities Mapping for Research Use Case<a class="headerlink" href="#panoptic-privacy-activities-mapping-for-research-use-case" title="Link to this heading">#</a></h1>
+<p><a href="#id25"><span class="problematic" id="id26">|.. image:: media/Appendix-Figure16.gif|</span></a> <a href="#id27"><span class="problematic" id="id28">|.. image:: media/Appendix-Figure17.gif|</span></a></p>
+</section>
+<section id="scenarios">
+<h1>Scenarios<a class="headerlink" href="#scenarios" title="Link to this heading">#</a></h1>
+<a class="reference internal image-reference" href="../_images/Appendix-Figure18.gif"><img alt="../_images/Appendix-Figure18.gif" src="../_images/Appendix-Figure18.gif" style="width: 4.01988in; height: 7.92687in;" />
+</a>
+</section>
+<section id="threat-validation-and-prioritization">
+<h1>Threat Validation and Prioritization<a class="headerlink" href="#threat-validation-and-prioritization" title="Link to this heading">#</a></h1>
+</section>
+<section id="panoptic-linddun-mapping">
+<h1>PANOPTIC – LINDDUN Mapping<a class="headerlink" href="#panoptic-linddun-mapping" title="Link to this heading">#</a></h1>
+<a class="reference internal image-reference" href="../_images/Appendix-Figure19.gif"><img alt="../_images/Appendix-Figure19.gif" src="../_images/Appendix-Figure19.gif" style="width: 4.26834in; height: 8.0159in;" />
+</a>
+</section>
+<section id="threat-validations-and-ranking-attributes">
+<h1>Threat Validations and Ranking Attributes<a class="headerlink" href="#threat-validations-and-ranking-attributes" title="Link to this heading">#</a></h1>
+<a class="reference internal image-reference" href="../_images/Appendix-Figure20.gif"><img alt="../_images/Appendix-Figure20.gif" src="../_images/Appendix-Figure20.gif" style="width: 6.5in; height: 8.33542in;" />
+</a>
+<a class="reference internal image-reference" href="../_images/Appendix-Figure21.gif"><img alt="../_images/Appendix-Figure21.gif" src="../_images/Appendix-Figure21.gif" style="width: 6.5in; height: 8.60903in;" />
+</a>
+<a class="reference internal image-reference" href="../_images/Appendix-Figure22.gif"><img alt="../_images/Appendix-Figure22.gif" src="../_images/Appendix-Figure22.gif" style="width: 6.5in; height: 8.61667in;" />
+</a>
+<a class="reference internal image-reference" href="../_images/Appendix-Figure23.gif"><img alt="../_images/Appendix-Figure23.gif" src="../_images/Appendix-Figure23.gif" style="width: 6.5in; height: 1.88194in;" />
+</a>
+</section>
+<section id="ranked-threats">
+<h1>Ranked Threats<a class="headerlink" href="#ranked-threats" title="Link to this heading">#</a></h1>
+<a class="reference internal image-reference" href="../_images/Appendix-Figure24.gif"><img alt="../_images/Appendix-Figure24.gif" src="../_images/Appendix-Figure24.gif" style="width: 6.5in; height: 8.60347in;" />
+</a>
+<a class="reference internal image-reference" href="../_images/Appendix-Figure25.gif"><img alt="../_images/Appendix-Figure25.gif" src="../_images/Appendix-Figure25.gif" style="width: 6.5in; height: 6.08681in;" />
+</a>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id8" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
+<p>Note that this directly conflicts with the repudiation threat type in STRIDE.</p>
+</aside>
+<aside class="footnote brackets" id="id9" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">2</a><span class="fn-bracket">]</span></span>
+<p>The complete taxonomy with definitions and supporting resources is available at <a class="reference external" href="https://ptmworkshop.gitlab.io/#/panoptic">https://ptmworkshop.gitlab.io/#/panoptic</a>.</p>
+</aside>
+<aside class="footnote brackets" id="id10" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">3</a><span class="fn-bracket">]</span></span>
+<p>Data actions describe broad types of system operations on data such as collection and transformation.</p>
+</aside>
+<aside class="footnote brackets" id="id11" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">4</a><span class="fn-bracket">]</span></span>
+<p>The PANOPTIC Privacy Activity is distinct from the NIST privacy engineering objective of the same name.</p>
+</aside>
+<aside class="footnote brackets" id="id12" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">5</a><span class="fn-bracket">]</span></span>
+<p>The NIST Privacy Framework <em>[15]</em> defines data processing as the collective set of data actions (i.e., the complete data life cycle, including, but not limited to collection, retention, logging, generation, transformation, use, disclosure, sharing, transmission, and disposal).</p>
+</aside>
+</aside>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Appendices</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-a-abbreviations-and-acronyms">Appendix A: Abbreviations and Acronyms</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#threat-modeling-approach">Threat Modeling Approach</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#privacy-threat-modeling">Privacy Threat Modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linddun">LINDDUN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mitre-panoptic">MITRE PANOPTIC™</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nist-privacy-risk-assessment-methodology-pram">NIST Privacy Risk Assessment Methodology (PRAM)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organizational-tailoring">Organizational Tailoring</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-overview">Methodology Overview</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#system-description">System Description</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#panoptic-contextual-mapping-for-clinical-use-case">PANOPTIC Contextual Mapping for Clinical Use Case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#panoptic-contextual-mapping-for-research-use-case">PANOPTIC Contextual Mapping for Research Use Case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataflow-diagram-legend">Dataflow Diagram Legend</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataflow-diagram-for-clinical-use-case">Dataflow Diagram for Clinical Use Case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataflow-diagram-for-research-physical-use-case">Dataflow Diagram for Research Physical Use Case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataflow-diagram-for-research-digital-use-case">Dataflow Diagram for Research Digital Use Case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-dataflow-diagram">Shared Dataflow Diagram</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataflow-analysis">Dataflow Analysis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataflow-analysis-for-clinical-use-case">Dataflow Analysis for Clinical Use Case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataflow-analysis-for-research-use-case">Dataflow Analysis for Research Use Case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-dataflow-analysis">Shared Dataflow Analysis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-and-sorted-dataflow-analysis">Integrated and Sorted Dataflow Analysis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#panoptic-privacy-activities-mapping-for-clinical-use-case">PANOPTIC Privacy Activities Mapping for Clinical Use Case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#panoptic-privacy-activities-mapping-for-research-use-case">PANOPTIC Privacy Activities Mapping for Research Use Case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#scenarios">Scenarios</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#threat-validation-and-prioritization">Threat Validation and Prioritization</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#panoptic-linddun-mapping">PANOPTIC – LINDDUN Mapping</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#threat-validations-and-ranking-attributes">Threat Validations and Ranking Attributes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ranked-threats">Ranked Threats</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<p>
+  
+    By NIST<br/>
+  
+</p>
+
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+<footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        <div class="disclaimer">
+          <strong>Disclaimer:</strong> Certain commercial equipment, instruments, or
+          materials are identified in this documentation to foster understanding. Such
+          identification does not imply recommendation or endorsement by the National
+          Institute of Standards and Technology, nor does it imply that the materials
+          or equipment identified are necessarily the best available for the purpose.
+        </div>
+      </p>
+    </div>
+</footer>
+  </body>
+</html>

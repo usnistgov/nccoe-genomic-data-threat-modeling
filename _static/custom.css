@@ -1,0 +1,38 @@
+:root {
+  --pst-color-link-hover: inherit;
+}
+
+.table tbody tr:nth-child(odd):hover {
+  background-color: var(--pst-color-table-row-zebra-low-bg);
+}
+
+.table tbody tr:nth-child(even):hover {
+  background-color: var(--pst-color-table-row-zebra-high-bg);
+}
+
+#tag-list li {
+  cursor: pointer;
+}
+
+#tag-list li.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+a:hover {
+  color: inherit !important;
+  text-decoration: underline;
+}
+
+#main-content {
+  width: 100%;
+}
+
+#faq h1,
+#wireframes h1{
+  display: none;
+}
+
+.bd-main .bd-content div.bd-article-container {
+  max-width: unset;
+}

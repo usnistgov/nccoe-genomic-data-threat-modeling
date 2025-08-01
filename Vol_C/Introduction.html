@@ -1,0 +1,573 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction &#8212; NCCoE Genomic Data Threat Modeling Project</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/content.css?v=59cd0ab0" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=60ee0719" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Vol_C/Introduction';</script>
+    <script src="../_static/jquery.visible.js?v=5b129ffc"></script>
+    <script src="../_static/jquery.leaveNotice-nist.js?v=7cf1efa2"></script>
+    <script src="../_static/applyLeaveNotice.js?v=ca661b5e"></script>
+    <script src="../_static/smoothNavScroll.js?v=2ce98a12"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.min.js"></script>
+    <script src="../_static/main.js?v=74083827"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Genomic Data Threat Modeling Example" href="PTM/index.html" />
+    <link rel="prev" title="Summary" href="Summary.html" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+
+    <!-- Google tag (gtag.js) -->
+    <script async
+        src="https://www.googletagmanager.com/gtag/js?id=G-RJSMY46M5C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-RJSMY46M5C');
+
+    </script>
+    <!-- Old DAP UA tag -->
+    <script async type="text/javascript" id="_fed_an_ua_tag"
+        src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NIST&subagency=github&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c">
+    </script>
+    <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+    <link rel="stylesheet" type="text/css" href="https://pages.nist.gov/leaveNotice/css/jquery.leaveNotice.css" />
+    <script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer-v-2.0.js" type="text/javascript" defer="defer"></script>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">NCCoE Genomic Data Threat Modeling Project</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Genomic Data Threat Modeling
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Vol_A/ExecutiveSummary.html">Executive Summary</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Genomic Data Threat Modeling: Privacy</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Summary.html">Summary</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="PTM/index.html">Genomic Data Threat Modeling Example</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="PTM/Question1.html">Question 1: "What are we working on?"</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PTM/Question2.html">Question 2: "What could go wrong?"</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PTM/Question3.html">Question 3: "What are we going to do about it?"</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PTM/Question4.html">Question 4: "How did we do?"</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="Conclusion.html">Conclusion</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Appendix/index.html">Appendices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="Appendix/appendixA.html">Appendix A</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Appendix/appendixB.html">Appendix B</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Appendix/appendixC.html">Appendix C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Appendix/appendixD.html">Appendix D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Appendix/appendixE.html">Appendix E</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Appendix/appendixF.html">Appendix F</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Appendix/appendixG.html">Appendix G</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Vol_C/Introduction.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#audience-and-purpose">Audience and Purpose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope-and-use-cases">Scope and Use Cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genomic-data-characteristics">Genomic Data Characteristics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#privacy-overview">Privacy Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-modeling-overview">Risk Modeling Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#threat-modeling-overview">Threat Modeling Overview</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<p>This document provides an example of how to conduct genomic data threat modeling for privacy on processing environments to help identify potential threats, prioritize them, and develop potential interventions. The term threat modeling is used here for privacy to describe a process consistent with the cybersecurity threat modeling document <a class="reference internal" href="Appendix/appendixB.html#ref7" id="id1"><span>[Ref7]</span></a> as both cybersecurity and privacy issues can arise in genomic data processing. The environments represent a baseline implementation with devices, processes, and tools commonly used by government, academia, and industry for processing genomic data in clinical and research contexts.</p>
+<section id="audience-and-purpose">
+<h2>Audience and Purpose<a class="headerlink" href="#audience-and-purpose" title="Link to this heading">#</a></h2>
+<p>This paper is intended for organizations that process genomic datasets in clinical or research contexts. Genomic data processing includes sequencing genomic material as well as storing, analyzing, transferring, and appropriate destruction of genomic data. These organizations can apply the threat modeling process to develop dataflow diagrams (DFDs), identify threats, and understand interventions. Threat modeling can be used to:</p>
+<ul class="simple">
+<li><p>Guide system development and assess the threat reduction value of proposed threat interventions.</p></li>
+<li><p>Assess proposed changes to architecture or functionality for impacts on system threat and risk posture.</p></li>
+<li><p>Evaluate and respond to threat environment changes, such as threat intelligence or incident.</p></li>
+<li><p>Develop a Privacy Framework Organizational Profile that tailors the Genomic Data Profile  <a class="reference internal" href="Appendix/appendixB.html#ref5" id="id2"><span>[Ref5]</span></a> to identify and prioritize threat-informed capabilities.</p></li>
+<li><p>Incorporate threats into the NIST PRAM <a class="reference internal" href="Appendix/appendixB.html#ref1" id="id3"><span>[Ref1]</span></a> by mapping the validated threats into the standard Worksheet 3 (Prioritizing Risk) based on the associated data actions, assigning relevant Problematic Data Actions and Problems for Individuals, and using the attack feasibility and difficulty combination values (converted to a 10-point scale) as surrogates for likelihood.</p></li>
+</ul>
+</section>
+<section id="scope-and-use-cases">
+<h2>Scope and Use Cases<a class="headerlink" href="#scope-and-use-cases" title="Link to this heading">#</a></h2>
+<p>This threat modeling example addresses common elements of a genomics workflow including sending physical samples to a sequencing service provider, sequencing of deoxyribonucleic acid (DNA), and receiving the resulting data from the service provider. The biotechnology sector relies on elements of this workflow for many of its products and services. This workflow includes several types of entities, including commonly a Clinical Client/Research Partner and a Genomic Sequencing Service[1]_. While there are distinct differences between clinical and research contexts, they share a core workflow. In the example workflow, a client/partner sends a specimen[2]_ to the genomic sequencing service to process the sample and return digital data in the form of a genomic sequence or analytical test results. The genomic sequence serves as an input to the client/partner’s bioinformatics data analysis pipelines and can be used to support patient care by the Clinical Client. For this work, the NCCoE sent a DNA reference material (Clinical Client/Research Partner) to a genomic center (Genomic Sequencing Service) to sequence the sample then transfer the data back using a widely adopted protocol to the NCCoE for secondary analysis. Figure 1 illustrates this genomic sequencing workflow but does not depict the subsequent handling of data after its initial use. Organizations may either retain or dispose of data, based on its intended purpose and the organization’s data retention practices and according to patient or research subject consent.</p>
+<p>Figure 1 illustrates this genomic sequencing workflow.</p>
+<p>Throughout this document, we use a limited <em>core</em> example to illustrate the described methods. This <em>core</em> example is a generalized version of the analyzed processes that are common to both the clinical and the research use cases. Artifacts related to the <em>complete</em> example that are not included in the body of this paper can be found in the designated appendices. The <em>complete</em> example includes more comprehensive analysis of both the clinical and research cases.</p>
+</section>
+<section id="genomic-data-characteristics">
+<h2>Genomic Data Characteristics<a class="headerlink" href="#genomic-data-characteristics" title="Link to this heading">#</a></h2>
+<p>The nature of human genomic data poses challenges for privacy. As a biometric it is immutable (unlike, for example, a password or a phone number). When genomic data is leaked or moves beyond a sphere of control, the affected data subjects cannot respond by simply changing their genomes. Moreover, that durability can motivate the prolonged retention of genomic data over time, rendering it more vulnerable to eventual disclosure or misuse.</p>
+<p>Equally problematic is the extent of the information contained in a person’s genome. While the interpretability of genomic data varies, the risk to privacy extends beyond identification. Genomic data can reveal a variety of health-related conditions or susceptibility to conditions. It can also reveal family connections and in doing so imply the potential health status or predisposition of others beyond the original data subject. This is in addition to the incidental data (e.g., contact information) that these others may share with the original data subject. It is therefore useful to distinguish between direct (i.e., sample provider) and indirect data subjects (i.e., biological relatives). Figure 2 illustrates these relationships for both the clinical and research use cases, where the direct data subject is a patient and/or research subject.</p>
+<figure class="align-default" id="id19">
+<a class="reference internal image-reference" href="../_images/Figure2.png"><img alt="Diagram that describe relationships between a direct data subject’s genomic data and indirect data subject’s data linked by way of inheritance. Part of a person’s are de novo variants and part are inherited from parents." src="../_images/Figure2.png" style="width: 6.5in; height: 4.27847in;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Figure 2. Genomic Data Relationships</span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="privacy-overview">
+<h2>Privacy Overview<a class="headerlink" href="#privacy-overview" title="Link to this heading">#</a></h2>
+<p>NIST SP 800-188 <a class="reference internal" href="Appendix/appendixB.html#ref8" id="id4"><span>[Ref8]</span></a> that focuses on techniques to de-identify government datasets includes a glossary definition of privacy as, “Freedom from intrusion into the private life or affairs of an individual when that intrusion results from undue or illegal gathering and use of data about that individual,” though universal agreement on a definition is still forming. However, the privacy literature includes different types of privacy associated with the contexts in which privacy problems may arise. While individual classifications may differ, they tend to resemble one another. Considering those classes specified by International Association of Privacy Professionals, of relevance to genomics are physical or bodily privacy[4]_ (i.e., privacy problems that deal with the human body or bodily functions) and information[5]_ or data privacy[6]_ (i.e., privacy problems that arise based on how data is processed). In the context of genomics, physical or bodily privacy applies to the acquisition of biospecimens from individuals while information or data privacy applies to symbolic representations of those specimens and any information derived from them, as well as accompanying metadata or identifiers (e.g., medical record numbers), demographics (e.g., age, gender), and diagnostic codes.</p>
+<p>Those individuals to whom information or data pertain are often referred to as “data subjects” to emphasize the connection between the two. Information or data privacy is often confused with data security owing to their common interest in confidentiality (protecting data from unauthorized access or disclosure). However, data confidentiality is only one facet of data privacy out of many, including aspects of control over data and constraints on the collection and use of data. (While privacy is dependent on security, that dependency is not explicitly covered here given the cybersecurity threat modeling described in NIST CSWP 35 <a class="reference internal" href="Appendix/appendixB.html#ref7" id="id5"><span>[Ref7]</span></a>.) This broader landscape of privacy is recognized in systems-level applications including the NIST Privacy Engineering Objectives (PEOs) of predictability, manageability, and disassociability <a class="reference internal" href="Appendix/appendixB.html#ref9" id="id6"><span>[Ref9]</span></a> as well as in higher level descriptions such as in the Fair Information Practice Principles (variations of which form a widely used basis for data privacy, such as the Organization for Economic Cooperation and Development (OECD) privacy guidelines <a class="reference internal" href="Appendix/appendixB.html#ref10" id="id7"><span>[Ref10]</span></a>).</p>
+</section>
+<section id="risk-modeling-overview">
+<h2>Risk Modeling Overview<a class="headerlink" href="#risk-modeling-overview" title="Link to this heading">#</a></h2>
+<p>Risk modeling applies to both privacy and cybersecurity. Cybersecurity risk modeling centers on protecting organizations, whereas privacy focuses on individuals and groups. While realized privacy risks can include negative effects on an organization, their primary impacts are on people. Privacy risks are highly contextual because individuals and groups vary in their perceptions, preferences, and understanding of privacy and the complex systems that influence them.</p>
+<p>Risk modeling identifies a range of potential risks for evaluation. A risk arises when a threat exploits a vulnerability, leading to an adverse outcome. However, not every threat will exploit every potential vulnerability. While each element of risk modeling—threats, vulnerabilities, and consequences—can be analyzed individually; threat modeling focuses specifically on understanding the threat component. To maximize the applicability of this paper’s workflow (sequencing genomic material), the process focuses on threats instead of risks. In this paper, a genomic data threat related to privacy is any circumstance or event with the potential to compromise the predictability, manageability, and/or disassociability[7]_ of systems involving data associated with individuals (adapted from the NIST Privacy Framework <a class="reference internal" href="Appendix/appendixB.html#ref4" id="id8"><span>[Ref4]</span></a> and NIST IR 8062 <a class="reference internal" href="Appendix/appendixB.html#ref9" id="id9"><span>[Ref9]</span></a>). Note that genomic data privacy threats are distinct from the adverse consequences that could result from such compromises and can arise without external factors.</p>
+</section>
+<section id="threat-modeling-overview">
+<h2>Threat Modeling Overview<a class="headerlink" href="#threat-modeling-overview" title="Link to this heading">#</a></h2>
+<p>Threat modeling can support a broad stakeholder base who can then integrate the results into their larger and more specific risk modeling and management efforts.</p>
+<p>The NCCoE team used the Four Question Framework, illustrated in the Appendix Figure 1, to structure the threat modeling process by answering:</p>
+<ol class="arabic simple">
+<li><p>“What are we working on?”</p></li>
+<li><p>“What could go wrong?”</p></li>
+<li><p>“What are we going to do about it?”</p></li>
+<li><p>“Did we do a good job?””</p></li>
+</ol>
+<p>In each of the four questions, “we” refers to the team performing the threat modeling. Though the questions are listed in sequential order, the process is iterative. Each question is addressed through specific techniques outlined in this paper. Answers to one question may be used to modify previous answers or highlight the incompleteness of an answer to a previous question. Threat modeling results improve through each iteration and should be conducted throughout the system’s life cycle and whenever changes in the environment may impact threats. NIST CSWP 35 <a class="reference internal" href="Appendix/appendixB.html#ref7" id="id10"><span>[Ref7]</span></a> demonstrates how the Four-Question Framework can be applied to cybersecurity threat modeling of a genomic data sequencing workflow.</p>
+<p>Appendix C provides details for each tool used in this exercise with important details provided in this subsection. Threat modeling tools used in this exercise include the following:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>NIST PRAM <a class="reference internal" href="Appendix/appendixB.html#ref1" id="id11"><span>[Ref1]</span></a>: NIST’s Privacy Engineering Program produced the Privacy Risk Assessment Methodology for identifying system privacy risks. Figure 3 shows the four PRAM worksheets: 1) Framing Business Objectives &amp; Organizational Privacy Governance, 2) Assessing System Design (includes a separate Supporting Data Map), 3) Prioritizing Risk, and 4) Selecting Controls. The PRAM also leverages a non-exhaustive privacy risk model consisting of “Problematic Data Actions” that may result in adverse effects for individuals listed in “Problems for Individuals.”</p></li>
+<li><p>LINDDUN: A threat modeling tool for privacy inspired by the cybersecurity threat modeling tool STRIDE <a class="reference internal" href="Appendix/appendixB.html#ref5" id="id12"><span>[Ref5]</span></a>,the name is an acronym comprising seven different threat types: Linking, Identifying, Non-repudiation, Detecting, Data disclosure, Unawareness and Unintervenability, and Non-compliance. This technique relies on Dataflow Diagrams, which are useful for data privacy analysis and understanding the data life cycle.</p></li>
+<li><p>PANOPTIC: A privacy analog to MITRE ATT&amp;CK, the Pattern and Action Nomenclature of Privacy Threats in Context, was created based on real-world privacy attacks drawn from multiple sources. PANOPTIC has two closely related taxonomies of Contextual Domains and Privacy Activities that are enumerated in Table 23 and 24 of Appendix C.</p></li>
+</ol>
+</div></blockquote>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id13" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Note that client and service as used here refer to actors and not technical architecture</p>
+</aside>
+<aside class="footnote brackets" id="id14" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>Note that in some research use cases, such as re-analysis of existing data or aggregating across large sample collections, the digital genomic representation plus associated metadata may be sent to a service provider for processing</p>
+</aside>
+<aside class="footnote brackets" id="id15" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://iapp.org/resources/glossary/#bodily-privacy">https://iapp.org/resources/glossary/#bodily-privacy</a></p>
+</aside>
+<aside class="footnote brackets" id="id16" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://iapp.org/resources/glossary/#information-privacy">https://iapp.org/resources/glossary/#information-privacy</a></p>
+</aside>
+<aside class="footnote brackets" id="id17" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></span>
+<p>Note that concepts of privacy apply to people, not things. The term “data privacy” is not intended to imply that data has privacy; rather, the term refers to privacy as it relates to data processing and the impacts that data processing may have on people.</p>
+</aside>
+<aside class="footnote brackets" id="id18" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></span>
+<p>These are the NIST privacy engineering objectives and are intended to be analogous to the fundamental cybersecurity properties of confidentiality, integrity, and availability. Predictability enables, “reliable assumptions by individuals, owners, and operators about data and their processing by a system.” Manageability provides, “the capability for granular administration of data including alteration, deletion, and selective disclosure.” Disassociability enables, “processing of data or events without association to individuals or devices beyond the operational requirements of the system.”</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Summary.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Summary</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="PTM/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Genomic Data Threat Modeling Example</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#audience-and-purpose">Audience and Purpose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope-and-use-cases">Scope and Use Cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genomic-data-characteristics">Genomic Data Characteristics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#privacy-overview">Privacy Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-modeling-overview">Risk Modeling Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#threat-modeling-overview">Threat Modeling Overview</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<p>
+  
+    By NIST<br/>
+  
+</p>
+
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+<footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        <div class="disclaimer">
+          <strong>Disclaimer:</strong> Certain commercial equipment, instruments, or
+          materials are identified in this documentation to foster understanding. Such
+          identification does not imply recommendation or endorsement by the National
+          Institute of Standards and Technology, nor does it imply that the materials
+          or equipment identified are necessarily the best available for the purpose.
+        </div>
+      </p>
+    </div>
+</footer>
+  </body>
+</html>
