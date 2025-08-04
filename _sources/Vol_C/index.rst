@@ -29,7 +29,7 @@ INITIAL PUBLIC DRAFT
 
 Certain commercial entities, equipment, products, or materials may be identified by name or company logo or other insignia in order to acknowledge their participation in this collaboration or to describe an experimental procedure or concept adequately. Such identification is not intended to imply special status or relationship with NIST or recommendation or endorsement by NIST or NCCoE; neither is it intended to imply that the entities, equipment, products, or materials are necessarily the best available for the purpose.
 
-National Institute of Standards and Technology Special Publication 1800-43, Natl. Inst. Stand. Technol. Spec. Publ. 1800-43, 55 pages, (August 2025), CODEN: NSPUE2
+National Institute of Standards and Technology Special Publication 1800-43, Natl. Inst. Stand. Technol. Spec. Publ. 1800-43, 56 pages, (August 2025), CODEN: NSPUE2
 
 **NIST Technical Series Policies**
 Copyright, Use, and Licensing Statements `NIST Tech Pubs Policy <https://doi.org/10.6028/NIST-TECHPUBS.CROSSMARK-POLICY>`__
