@@ -10,15 +10,15 @@ From a cybersecurity perspective, the size and compute requirements for genomic 
 
 .. table:: Table 1. SP 1800-43 Benefits
 
-   +----------------------------------------------------------------------------------------------------------------------+
-   | This SP 1800-series can help your organization:                                                                      |
-   +======================================================================================================================+
-   | - Understand how to conduct threat modeling for cybersecurity and privacy                                            |
-   +----------------------------------------------------------------------------------------------------------------------+
-   | - Establish a cybersecurity and privacy baseline by leveraging the methodology and dataflows described in this guide |
-   +----------------------------------------------------------------------------------------------------------------------+
-   | - Identify and mitigate threats with security controls and privacy safeguards                                        |
-   +----------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------------------------------------------------------------------------------------------+
+   | This SP 1800-series can help your organization:                                                                                   |
+   +===================================================================================================================================+
+   | - Understand how to conduct genomic data threat modeling for cybersecurity and privacy                                            |
+   +-----------------------------------------------------------------------------------------------------------------------------------+
+   | - Establish a genomic data cybersecurity and privacy baseline by leveraging the methodology and dataflows described in this guide |
+   +-----------------------------------------------------------------------------------------------------------------------------------+
+   | - Identify and mitigate threats with security controls and privacy safeguards                                                     |
+   +-----------------------------------------------------------------------------------------------------------------------------------+
    
 
 SOLUTION

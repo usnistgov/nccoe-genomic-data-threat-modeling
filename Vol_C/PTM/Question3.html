@@ -391,7 +391,7 @@ document.write(`
 <p>Once threats have been validated, decisions must be made regarding how to respond. The high-level options for addressing validated threats align with the options for risk management:</p>
 <ol class="arabic simple">
 <li><p><strong>Eliminate.</strong> This is the most desired outcome; however, it is often challenging and may involve forgoing a specific feature or functionality. For example, in the case of attack number 1 in the core example (Table 15), removing the receiving clerk from the pipeline by sending physical samples directly to the relevant lab technician would introduce logistical complications that could prove infeasible. If a feature or function is required to accomplish one of the use case’s Mission Objectives (MOs), then eliminating the threat is not possible.</p></li>
-<li><p><strong>Disrupt.</strong> This involves identifying, adding, and/or improving controls to frustrate attacks. For example, the nexus of attack number 1 in the core example is single source profiling. Controls targeting this threat action would disrupt the entire attack. This is explored in more detail in <a class="reference external" href="PTM/Question3.html#response-determination">Section 3</a>.</p></li>
+<li><p><strong>Disrupt.</strong> This involves identifying, adding, and/or improving controls to frustrate attacks. For example, the nexus of attack number 1 in the core example is single source profiling. Controls targeting this threat action would disrupt the entire attack. This is explored in more detail in <a class="reference external" href="Question3.html#response-determination">Response Determination</a>.</p></li>
 <li><p><strong>Transfer Responsibility.</strong> This strategy transfers responsibility for addressing the threat to another entity, who may have resources of their own to intervene or who can better tolerate the presence of the threat. Documentation of this responsibility transfer and appropriate agreements are an important aspect for implementing this option.</p></li>
 <li><p><strong>Accept.</strong> In any system, there are threats which are challenging or impossible to disrupt but whose presence is judged to be tolerable. For example, attack number 55 in the core example reflects potential issues of software supply chains. However, the system design may be judged sufficiently robust to warrant accepting the threat of using externally developed software, which may then be paired with threat intelligence monitoring. These accepted threats need to be documented and periodically reviewed, tolerance for accepting threats may change over time.</p></li>
 </ol>
@@ -402,8 +402,8 @@ document.write(`
 <h2>Threat Prioritization<a class="headerlink" href="#threat-prioritization" title="Link to this heading">#</a></h2>
 <p>While a small number of threats can be easily prioritized by inspection, typical analyses require a more systematic approach. Therefore, each attack was characterized in terms of its feasibility and difficulty. In this exercise the core example only exhibits a handful of validated threats though the complete example identifies close to 100 as described in Appendix E, G and F with many falling below a prioritization threshold.</p>
 <p>Assigning values to attack feasibility (how credible it is) and difficulty (how hard it is to execute) is inherently subjective. Feasibility reflects a number of factors, including threat actor opportunity, capability, and (in the case of people and organizations) motivation. It is assessed using one of three designations: plausible, implausible, or indeterminate. In those cases where the system itself is the threat actor and the attack is intrinsic to normal system operation, of course, the attack is not only feasible but pre-determined and therefore plausible by definition. Attack difficulty reflects the capabilities and resources required, as well as how many discrete threat actions are involved, and is indicated using a five-step scale. The difficulty scale and context-specific criteria based on the state of the data are given in Table 16.</p>
-<div class="pst-scrollable-table-container"><table class="table" id="id5">
-<caption><span class="caption-text">Table 16. Attack Difficulty Scale</span><a class="headerlink" href="#id5" title="Link to this table">#</a></caption>
+<div class="pst-scrollable-table-container"><table class="table" id="id7">
+<caption><span class="caption-text">Table 16. Attack Difficulty Scale</span><a class="headerlink" href="#id7" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Difficulty Level</strong></p></th>
 <th class="head"><p><strong>Context-specific Data Criteria</strong></p></th>
@@ -429,8 +429,8 @@ document.write(`
 </table>
 </div>
 <p>Returning to attack number 14, this is a plausible attack based on the necessity of the dataflow through an honest but potentially curious threat actor, the receiving clerk. The attack is of moderate difficulty since it revolves around physical samples and requires knowledge and correlation of certain information. Table 17 shows the characterization for the entire core example. Table 13 lists descriptions of individual PANOPTIC threat actions.</p>
-<div class="pst-scrollable-table-container"><table class="table" id="id6">
-<caption><span class="caption-text">Table 17. Core Example Threat Characteristics</span><a class="headerlink" href="#id6" title="Link to this table">#</a></caption>
+<div class="pst-scrollable-table-container"><table class="table" id="id8">
+<caption><span class="caption-text">Table 17. Core Example Threat Characteristics</span><a class="headerlink" href="#id8" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>No.</strong></p></th>
 <th class="head"><p><strong>PANOPTIC Attack</strong></p></th>
@@ -515,8 +515,8 @@ document.write(`
 </table>
 </div>
 <p>Once all validated threats have had feasibility and difficulty values assigned, the different combinations can be assigned normalized numerical values for ranking purposes, as shown in Table 18. Plausible attacks of negligible difficulty carry the highest value (resulting in higher priority) while implausible attacks of severe difficulty carry the lowest value (resulting in lower priority). To incorporate additional nuance into the rankings, weights were assigned to the LINDDUN threat types to reflect their relative severity in the context of genomic sequencing, as shown in Table 19. Note, though, that these values are purely an ordering mechanism and do not have any intrinsic meaning.</p>
-<div class="pst-scrollable-table-container"><table class="table" id="id7">
-<caption><span class="caption-text">Table 18. Attack Feasibility and Difficulty Combination Values</span><a class="headerlink" href="#id7" title="Link to this table">#</a></caption>
+<div class="pst-scrollable-table-container"><table class="table" id="id9">
+<caption><span class="caption-text">Table 18. Attack Feasibility and Difficulty Combination Values</span><a class="headerlink" href="#id9" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Difficulty</strong></p>
 <p><strong>Feasibility</strong></p>
@@ -553,8 +553,8 @@ document.write(`
 </tbody>
 </table>
 </div>
-<div class="pst-scrollable-table-container"><table class="table" id="id8">
-<caption><span class="caption-text">Table 19. LINDDUN Threat Weights</span><a class="headerlink" href="#id8" title="Link to this table">#</a></caption>
+<div class="pst-scrollable-table-container"><table class="table" id="id10">
+<caption><span class="caption-text">Table 19. LINDDUN Threat Weights</span><a class="headerlink" href="#id10" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>LINDDUN Threat Type</strong></p></th>
 <th class="head"><p><strong>Weight</strong></p></th>
@@ -585,9 +585,9 @@ document.write(`
 </tbody>
 </table>
 </div>
-<p>These values and weights were multiplied for each attack and the results used to rank order the threats in the core example from highest to lowest priority, as shown in Table 20. (Ties are resolved using attack number.) The prioritization of threats for the complete example is provided in <a class="reference external" href="Appendix/appendixG.html">Appendix G</a>.</p>
-<div class="pst-scrollable-table-container"><table class="table" id="id9">
-<caption><span class="caption-text">Table 20. Core Example Threats in Ranked Order from Highest to Lowest Priority</span><a class="headerlink" href="#id9" title="Link to this table">#</a></caption>
+<p>These values and weights were multiplied for each attack and the results used to rank order the threats in the core example from highest to lowest priority, as shown in Table 20. (Ties are resolved using attack number.) The prioritization of threats for the complete example is provided in <a class="reference external" href="../Appendix/appendixG.html">Appendix G</a>.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id11">
+<caption><span class="caption-text">Table 20. Core Example Threats in Ranked Order from Highest to Lowest Priority</span><a class="headerlink" href="#id11" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>No.</strong></p></th>
 <th class="head"><p><strong>LINDDUN Threat</strong></p></th>
@@ -666,16 +666,16 @@ document.write(`
 <h2>Response Determination<a class="headerlink" href="#response-determination" title="Link to this heading">#</a></h2>
 <p>High-priority threats tend to readily give rise to decisions to intervene (typically in the form of elimination or disruption). Likewise, low-priority threats tend to prompt decisions to accept the threat. In contrast, determining the appropriate response to threats occupying the middle ground—such as attack number 14—is often less straightforward.</p>
 <p>Attack number 14 involves a seemingly unavoidable dataflow, so simply eliminating the dataflow is not an option, nor is there any obvious way of transferring responsibility. This leaves the option of either accepting the presence of the threat or disrupting it. Determining which course to pursue may require first exploring disruption options so that their viability may be considered.</p>
-<p>There are several reference sources for such controls, but one of the most prominent is NIST Special Publication (SP) 800-53r5, Security and Privacy Controls for Information Systems and Organizations <a class="reference internal" href="../Appendix/appendixB.html#ref6" id="id1"><span>[Ref6]</span></a>. However, different organizations may have varying resources and expertise for selecting controls and control enhancements relevant to given threats. Though organizations may have different approaches to this process, the following describes a way of facilitating the process to map from individual PANOPTIC threat actions to candidate controls using the NIST Privacy Framework, leveraging NIST’s crosswalk[14]_ from PF Subcategories to 800-53 controls.</p>
+<p>There are several reference sources for such controls, but one of the most prominent is NIST Special Publication (SP) 800-53r5, Security and Privacy Controls for Information Systems and Organizations <a class="reference internal" href="../Appendix/appendixB.html#ref6" id="id1"><span>[Ref6]</span></a>. However, different organizations may have varying resources and expertise for selecting controls and control enhancements relevant to given threats. Though organizations may have different approaches to this process, the following describes a way of facilitating the process to map from individual PANOPTIC threat actions to candidate controls using the NIST Privacy Framework, leveraging NIST’s crosswalk <a class="footnote-reference brackets" href="#id5" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></a> from PF Subcategories to 800-53 controls.</p>
 <p>Handling a large number of candidate controls, even after duplicates are accounted for, requires a reduction step. One way of further constraining the effort is to focus on critical PANOPTIC threat actions. These are threat actions that others are dependent upon; disrupting critical threat actions in effect invalidates the attack. In attack number 14, the critical threat action is single source profiling. The threat actions that enable it (Recording and Biological sample) are unavoidable while the remaining threat actions (Affording revelations and Implication) are enabled by it. Focusing on single source profiling (and its associated LINDDUN threat) results in a set of less than 20 candidate controls. Appendix C shows this winnowing process, starting from the two PF Categories implicated by this threat action, mapping from the Categories to the relevant Subcategories, and from the Subcategories to the relevant 800-53 controls.</p>
-<p>Each Subcategory is augmented with an ordered tuple (e.g., [1 2 1 1]), representing the priority of that Subcategory for each of the four selected MOs drawn from the Genomic Data Profile <a class="reference internal" href="../Appendix/appendixB.html#ref5" id="id2"><span>[Ref5]</span></a> (Organizational Tailoring in Appendix C provides more details of this approach). These tuples can be used to prioritize potential controls that might be employed to disrupt threats given that the Genomic Data Profile provides a list of MOs for organizations processing genomic data and prioritizes PF Subcategories (or outcomes) to support achieving those MOs. Based on the genomic sequencing workflow, four relevant MOs were selected:</p>
+<p>Each Subcategory is augmented with an ordered tuple (e.g., [1 2 1 1]), representing the priority of that Subcategory for each of the four selected MOs drawn from the Genomic Data Profile <a class="reference internal" href="../Appendix/appendixB.html#ref5" id="id3"><span>[Ref5]</span></a> (Organizational Tailoring in Appendix C provides more details of this approach). These tuples can be used to prioritize potential controls that might be employed to disrupt threats given that the Genomic Data Profile provides a list of MOs for organizations processing genomic data and prioritizes PF Subcategories (or outcomes) to support achieving those MOs. Based on the genomic sequencing workflow, four relevant MOs were selected:</p>
 <p>MO 2: Manage privacy risk to existing and future relatives</p>
 <p>MO 3: Identify, model, and address cybersecurity and privacy risks of processing genomic data</p>
 <p>MO 5: Manage privacy risk to donors</p>
 <p>MO 12: Promote the use of privacy-enhancing technologies as well as secure technologies for sharing genomic data</p>
 <p>Each Privacy Framework Subcategory includes this tuple that indicates the Genomic Data Profile prioritization of MO 2, MO 3, MO 5, and MO 12 listed as [1 2 1 2].</p>
-<div class="pst-scrollable-table-container"><table class="table" id="id10">
-<caption><span class="caption-text">Table 21. Mapping from Single Source Profiling to SP 800-53r5 Controls</span><a class="headerlink" href="#id10" title="Link to this table">#</a></caption>
+<div class="pst-scrollable-table-container"><table class="table" id="id12">
+<caption><span class="caption-text">Table 21. Mapping from Single Source Profiling to SP 800-53r5 Controls</span><a class="headerlink" href="#id12" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Privacy Framework Function - Category</strong></p></th>
 <th class="head"><p><strong>Privacy Framework Subcategory</strong></p></th>
@@ -772,7 +772,7 @@ document.write(`
 </tbody>
 </table>
 </div>
-<p>Once the set of potentially applicable controls has been narrowed down in this way, the tuples derived from MO 2, MO 3, MO 5, and MO 12 can be used to prioritize the Subcategories and by extension control selection.[15]_  MO 2, which deals with privacy risk to relatives, is not relevant for this attack and can be ignored. MO 12, which addresses use of privacy-enhancing technologies (PETs), assigns the same priority to all three Subcategories and can also be ignored as it does not contribute any differentiation. The prioritizations for MO 3 and MO 5, however, readily yield an ordering of (1) CT.D-P2 [2 1], (2) PR.PT-P2 [2 2], (3) CT.DP-P3 [3 2].</p>
+<p>Once the set of potentially applicable controls has been narrowed down in this way, the tuples derived from MO 2, MO 3, MO 5, and MO 12 can be used to prioritize the Subcategories and by extension control selection. <a class="footnote-reference brackets" href="#id6" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></a>  MO 2, which deals with privacy risk to relatives, is not relevant for this attack and can be ignored. MO 12, which addresses use of privacy-enhancing technologies (PETs), assigns the same priority to all three Subcategories and can also be ignored as it does not contribute any differentiation. The prioritizations for MO 3 and MO 5, however, readily yield an ordering of (1) CT.D-P2 [2 1], (2) PR.PT-P2 [2 2], (3) CT.DP-P3 [3 2].</p>
 <p>Reviewing the controls associated with CT.DP-P2 for those that appear most relevant or impactful, we find two candidates:</p>
 <ul class="simple">
 <li><p>IA-4(8) Pairwise Pseudonymous Identifiers − Generate pairwise pseudonymous identifiers.</p></li>
@@ -790,12 +790,12 @@ document.write(`
 <p>While in this case one might well have arrived at the same or similar conclusions without the Subcategory prioritization, some of the threat actions map to a significantly greater number of Subcategories with a much larger set of associated controls. In those cases, Subcategory prioritization can provide beneficial structure that facilitates control selection. Where there are many Subcategories, prioritization might even provide a basis for limiting control selection to those associated with the higher-priority Subcategories.</p>
 <p>It stands to reason that similar threats should respond to similar interventions, so in principle these disruptions should be applicable to all instances of the scenario, addressing attacks 1 through 5 as well as attack number 15. This also applies to other intervention types. One might also potentially identify similar attacks in different scenarios by searching on the associated critical threat actions and/or specific LINDDUN threats. Further, selection of controls that show up frequently across disruptions may offer greater cost-effectiveness, as long as care is taken to ensure that all targeted threats are sufficiently addressed. Also, given that some threats involve 3rd parties, controls that focus on agreements or those such as CA-02 Control Assessments and CA-03 Information Exchange may offer interventions that address multiple threats.</p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id3" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id5" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">16</a><span class="fn-bracket">]</span></span>
 <p><a class="github reference external" href="https://github.com/usnistgov/PrivacyFrmwkResources/raw/master/resources/NIST%20SP%20800-53%20Crosswalk/csf-pf-to-sp800-53r5-mappings.xlsx">usnistgov/PrivacyFrmwkResources</a></p>
 </aside>
-<aside class="footnote brackets" id="id4" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id6" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">17</a><span class="fn-bracket">]</span></span>
 <p>While in principle the Mission Objectives could be employed to prioritize threats rather than controls, the MOs selected for this workflow provide insufficient differentiation; MOs 3, 5, and 12 will be implicated by most threats.</p>
 </aside>
 </aside>

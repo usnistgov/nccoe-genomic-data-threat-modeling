@@ -15,7 +15,7 @@ Appendix B: References
 
 .. [Ref7] Pulivarti R, Wagner J, Zook, J, Kreider B, Wilson K, Snyder J, Wojtyniak M, Ross S, Whitlow P, Sheldon J, Brown I, Pape P, Alim E (2024) Cybersecurity Threat Modeling the Genomic Data Sequencing Workflow: An example threat model implementation for genomic data sequencing and analysis. (National Institute of Standards and Technology, Gaithersburg, MD), NIST Cybersecurity White Paper (CSWP) NIST CSWP 35 ipd. https://doi.org/10.6028/NIST.CSWP.35  
 
-.. [Ref8] Barker E, Smid M, Branstad D, Chokhani S (2013) A Framework for Designing Cryptographic Key Management Systems. (National Institute of Standards and Technology, Gaithersburg, MD), NIST Special Publication 800-130. https://doi.org/10.6028/NIST.SP.800-130  
+.. [Ref8] Garfinkel S, Guttman B, Near J, Dajani A, Singer P (2023) De-identifying Government Datasets: Techniques and Governance. (National Institute of Standards and Technology, Gaithersburg, MD), NIST Special Publication 800-188. https://doi.org/10.6028/NIST.SP.800-188  
 
 .. [Ref9] Brooks S, Garcia M, Lefkovitz N, Lightman S, Nadeau E (2017) An Introduction to Privacy Engineering and Risk Management in Federal Systems. (National Institute of Standards and Technology, Gaithersburg, MD), NIST Interagency or Internal Report (IR) NIST IR 8062. https://doi.org/10.6028/NIST.IR.8062
 

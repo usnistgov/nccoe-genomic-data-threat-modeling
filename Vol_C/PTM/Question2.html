@@ -393,10 +393,10 @@ document.write(`
 <p>To address “what could go wrong,” the dataflow analysis (1) employed LINDDUN and its catalog of threat trees to associate potential genomic data threats regarding privacy with specific dataflows and actions, then (2) created PANOPTIC attack mappings for the genomic sequencing workflow. Both models are needed because the LINDDUN analysis identifies abstract threats that are theoretically possible while PANOPTIC identifies steps that could form a practical attack. Where practical attack and theoretical threat align, the combination is validated against the NIST PEOs. This exercise ensures that potential threats are both conceivable and executable, and that these would impact at least one of the NIST PEOs.</p>
 <section id="linddun-analysis">
 <h2>LINDDUN Analysis<a class="headerlink" href="#linddun-analysis" title="Link to this heading">#</a></h2>
-<p>The LINDDUN <a class="reference internal" href="../Appendix/appendixB.html#ref2" id="id1"><span>[Ref2]</span></a> methodology involves assessing each distinct dataflow for potential threats. A dataflow consists of a source, the flow itself, and a destination. To avoid confusion, we refer to this triad as a dataflow segment. Using the modified Assess System Design table in PRAM Worksheet 2, each dataflow segment in the core example DFD (Figure 4) is documented. In addition to the source, flow, and destination, the applicable data actions[12]_ are also noted. Each dataflow segment is also assigned a purpose (based on the Data Action Key) using the Context column.</p>
+<p>The LINDDUN <a class="reference internal" href="../Appendix/appendixB.html#ref2" id="id1"><span>[Ref2]</span></a> methodology involves assessing each distinct dataflow for potential threats. A dataflow consists of a source, the flow itself, and a destination. To avoid confusion, we refer to this triad as a dataflow segment. Using the modified Assess System Design table in PRAM Worksheet 2, each dataflow segment in the core example DFD (Figure 4) is documented. In addition to the source, flow, and destination, the applicable data actions <a class="footnote-reference brackets" href="#id8" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a> are also noted. Each dataflow segment is also assigned a purpose (based on the Data Action Key) using the Context column.</p>
 <p>For each documented dataflow segment, relevant LINDDUN threats are then identified, using as a starting point the mapping of segment-based high-level threat types, shown in Table 11. This mapping is a heuristic for determining potential LINDDUN threats and involved components. The LINDDUN threat trees[Ref2]_ that detail those threat types can then be used to determine whether and which more granular threats potentially apply to that segment based on its constituent elements and context. Those threats judged potentially applicable are captured in the LINDDUN Analysis column in Table 12, including the scenario. Note that multiple threats may apply to a single dataflow segment.</p>
-<div class="pst-scrollable-table-container"><table class="table" id="id8">
-<caption><span class="caption-text">Table 11. LINDDUN Per Element Threat Mapping Heuristic</span><a class="headerlink" href="#id8" title="Link to this table">#</a></caption>
+<div class="pst-scrollable-table-container"><table class="table" id="id11">
+<caption><span class="caption-text">Table 11. LINDDUN Per Element Threat Mapping Heuristic</span><a class="headerlink" href="#id11" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Source (Src)</strong></p></th>
 <th class="head"><p><strong>Destination (Dst)</strong></p></th>
@@ -473,8 +473,8 @@ document.write(`
 <li><p>Standard practices are being employed in the workflow</p></li>
 </ul>
 <p>The process proceeds similarly for the remaining eight dataflow segments, resulting in Table 12. Note that a segment can be subject to more than one threat, as is the case for segment 8.</p>
-<div class="pst-scrollable-table-container"><table class="table" id="id9">
-<caption><span class="caption-text">Table 12. LINDDUN Dataflow Analysis for the Core Example</span><a class="headerlink" href="#id9" title="Link to this table">#</a></caption>
+<div class="pst-scrollable-table-container"><table class="table" id="id12">
+<caption><span class="caption-text">Table 12. LINDDUN Dataflow Analysis for the Core Example</span><a class="headerlink" href="#id12" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>No.</strong></p></th>
 <th class="head"><p><strong>Source</strong></p></th>
@@ -583,14 +583,14 @@ document.write(`
 </tbody>
 </table>
 </div>
-<p>The complete LINDDUN analysis can be found in <a class="reference external" href="Appendix/appendixE.html">Appendix E</a>. Note that for manageability the analysis was initially divided into clinical, research, and shared use cases, the last based on the common portion of the two use cases. The results were then combined into a single system design table. This table was then sorted on the specific LINDDUN threats.</p>
+<p>The complete LINDDUN analysis can be found in <a class="reference external" href="../Appendix/appendixE.html">Appendix E</a>. Note that for manageability the analysis was initially divided into clinical, research, and shared use cases, the last based on the common portion of the two use cases. The results were then combined into a single system design table. This table was then sorted on the specific LINDDUN threats.</p>
 </section>
 <section id="panoptic-analysis">
 <h2>PANOPTIC Analysis<a class="headerlink" href="#panoptic-analysis" title="Link to this heading">#</a></h2>
 <p>The LINDDUN analysis identifies potential threats at the level of dataflows. However, real-world privacy attacks are not typically launched at that level, nor do they consist of a single self-contained element. They are less abstract and operate at the system level. The PANOPTIC analysis is a necessary complement to the LINDDUN analysis as it will describe potential threats from a system perspective. The LINDDUN analysis is then used to determine whether the threats identified at the dataflow level support the projected attacks as described by PANOPTIC. If not, the PANOPTIC attacks are considered non-actionable.</p>
-<p>While the LINDDUN analysis is grounded in system specifics as captured by DFDs, the PANOPTIC analysis involves actively imagining in practical terms what might take place. Utilizing the PANOPTIC Privacy Activities mapping template, a privacy attack mapping for the core example was generated. Table 13 lists the threat actions identified for the core example based on high-level knowledge of the system and its context. The complete PANOPTIC mappings for the clinical and research use cases are provided in <a class="reference external" href="Appendix/appendixE.html">Appendix E</a>.</p>
-<div class="pst-scrollable-table-container"><table class="table" id="id10">
-<caption><span class="caption-text">Table 13. Threat Actions Identified by the PANOPTIC Privacy Activity Mapping for the Core Example</span><a class="headerlink" href="#id10" title="Link to this table">#</a></caption>
+<p>While the LINDDUN analysis is grounded in system specifics as captured by DFDs, the PANOPTIC analysis involves actively imagining in practical terms what might take place. Utilizing the PANOPTIC Privacy Activities mapping template, a privacy attack mapping for the core example was generated. Table 13 lists the threat actions identified for the core example based on high-level knowledge of the system and its context. The complete PANOPTIC mappings for the clinical and research use cases are provided in <a class="reference external" href="../Appendix/appendixE.html">Appendix E</a>.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id13">
+<caption><span class="caption-text">Table 13. Threat Actions Identified by the PANOPTIC Privacy Activity Mapping for the Core Example</span><a class="headerlink" href="#id13" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>PANOPTIC Threat Action</strong></p></th>
 <th class="head"><p><strong>Definition</strong></p></th>
@@ -687,9 +687,9 @@ Multi-source clustering</p></td>
 </tbody>
 </table>
 </div>
-<p>Table 14 describes five attack scenarios that are specific to the core example. Each scenario was determined by considering how specific threat actions could be used by an actor as part of an attack involving a distinct DFD segment. Since attacks could apply to different DFD segments, the table in some cases associates multiple identical attacks with the same scenario. <a class="reference external" href="Appendix/appendixF.html">Appendix F</a> provides the comprehensive analysis that was performed on the complete example, which includes all the Attack Numbers and Scenario IDs. Table 14 extracts only the attack scenarios relevant to the core example, aligning with the Attack Numbers, Scenario IDs, and Privacy Threat Actions from the comprehensive analysis found in <a class="reference external" href="Appendix/appendixF.html">Appendix F</a>.</p>
-<div class="pst-scrollable-table-container"><table class="table" id="id11">
-<caption><span class="caption-text">Table 14. Attack Scenarios Relevant to the Core Example</span><a class="headerlink" href="#id11" title="Link to this table">#</a></caption>
+<p>Table 14 describes five attack scenarios that are specific to the core example. Each scenario was determined by considering how specific threat actions could be used by an actor as part of an attack involving a distinct DFD segment. Since attacks could apply to different DFD segments, the table in some cases associates multiple identical attacks with the same scenario. <a class="reference external" href="../Appendix/appendixF.html">Appendix F</a> provides the comprehensive analysis that was performed on the complete example, which includes all the Attack Numbers and Scenario IDs. Table 14 extracts only the attack scenarios relevant to the core example, aligning with the Attack Numbers, Scenario IDs, and Privacy Threat Actions from the comprehensive analysis found in <a class="reference external" href="../Appendix/appendixF.html">Appendix F</a>.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id14">
+<caption><span class="caption-text">Table 14. Attack Scenarios Relevant to the Core Example</span><a class="headerlink" href="#id14" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Attack Numbers from Complete Example</strong></p></th>
 <th class="head"><p><strong>Scenario ID</strong></p></th>
@@ -721,7 +721,7 @@ Multi-source clustering</p></td>
 <tr class="row-even"><td><p>65</p></td>
 <td><p>S17</p></td>
 <td><p>PA02.02, PA07.05</p></td>
-<td><p>Sequencing service staff utilizes third party tools and software that may perform additional data actions unbeknownst to a direct data subject. <a class="footnote-reference brackets" href="#id7" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a></p></td>
+<td><p>Sequencing service staff utilizes third party tools and software that may perform additional data actions unbeknownst to a direct data subject. <a class="footnote-reference brackets" href="#id9" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -731,11 +731,11 @@ Multi-source clustering</p></td>
 <section id="threat-validation">
 <h2>Threat Validation<a class="headerlink" href="#threat-validation" title="Link to this heading">#</a></h2>
 <p>As previously indicated, threat validation consists of two steps: mapping PANOPTIC attacks to relevant LINDDUN threats and mapping LINDDUN-validated attacks against the NIST PEOs of predictability, manageability, and disassociability. If a PANOPTIC attack does not align with one or more LINDDUN threats or if an aligned attack does not appear to undermine at least one of the PEOs, then the threat is invalid and removed from further consideration during this modeling process iteration.</p>
-<p>Validation of PANOPTIC attacks against LINDDUN threats amounts to assessing the relationship between the threat actions that constitute the attack and the relevant LINDDUN threats. In most cases, that relationship is many-to-many. Therefore, carrying out this assessment involves judgement informed by the surrounding context. To facilitate this determination, <a class="reference external" href="Appendix/appendixG.html">Appendix G</a> includes a mapping between PANOPTIC threat actions and LINDDUN threats in both directions. Because such mappings exist in all cases, the mere existence of a potentially relevant LINDDUN threat is insufficient validation.</p>
+<p>Validation of PANOPTIC attacks against LINDDUN threats amounts to assessing the relationship between the threat actions that constitute the attack and the relevant LINDDUN threats. In most cases, that relationship is many-to-many. Therefore, carrying out this assessment involves judgement informed by the surrounding context. To facilitate this determination, <a class="reference external" href="../Appendix/appendixG.html">Appendix G</a> includes a mapping between PANOPTIC threat actions and LINDDUN threats in both directions. Because such mappings exist in all cases, the mere existence of a potentially relevant LINDDUN threat is insufficient validation.</p>
 <p>For attacks aligned with LINDDUN threats, validation against the PEOs serves to confirm that the attacks actually met the definition of a threat put forward in Section 1.4 by potentially undermining system predictability, manageability, and/or disassociability. Some attacks may impact more than one PEO, but a validated attack must impact at least one.</p>
-<p>Table 15 lists the validation results for the five attack scenarios relevant to the <em>core</em> example from Table 14. These were extracted from the complete combined validation table found in <a class="reference external" href="Appendix/appendixG.html">Appendix G</a>. This table documents the LINDDUN Analysis and PEOs impacted by the threat, aligned to the Attack Number, the Scenario ID, PANOPTIC Threat Action, and LINDDUN Threat.</p>
-<div class="pst-scrollable-table-container"><table class="table" id="id12">
-<caption><span class="caption-text">Table 15. Core Example Attack Validations</span><a class="headerlink" href="#id12" title="Link to this table">#</a></caption>
+<p>Table 15 lists the validation results for the five attack scenarios relevant to the <em>core</em> example from Table 14. These were extracted from the complete combined validation table found in <a class="reference external" href="../Appendix/appendixG.html">Appendix G</a>. This table documents the LINDDUN Analysis and PEOs impacted by the threat, aligned to the Attack Number, the Scenario ID, PANOPTIC Threat Action, and LINDDUN Threat.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id15">
+<caption><span class="caption-text">Table 15. Core Example Attack Validations</span><a class="headerlink" href="#id15" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Attack Number</strong></p></th>
 <th class="head"><p><strong>Scenario ID</strong></p></th>
@@ -823,15 +823,19 @@ Multi-source clustering</p></td>
 </tbody>
 </table>
 </div>
-<p>To understand the validation process, consider attack number 14 as a specific example from Table 15. The PANOPTIC threat actions and sub-actions that make up the attack map to the LINDDUN threat types of Linking, Non-repudiation, Detecting, and Data Disclosure. (Definitions of these are provided in <a class="reference external" href="Appendix/appendixC.html">Appendix C</a>.) Neither Non-repudiation nor Detecting is relevant to this scenario and can be dropped from consideration. By sorting the dataflow analysis table (Table 12) on the LINDDUN threat designators it is then possible to review the dataflows related to Linking and Data Disclosure. Matching scenario components are then identified by sorting on the Dataflow column to group those entries involving physical samples[13]_. The dataflow analysis for the core example contains multiple instances involving physical samples susceptible to threat L2.2.1, profiling an individual. This validates attack 14 against the LINDDUN analysis. Based on both the LINDDUN threat and the PANOPTIC threat actions (profiling and revelation in particular), attack 14 clearly undermines predictability as well as disassociability, validating it against the PEOs. Therefore, we can conclude that this is a valid threat.</p>
+<p>To understand the validation process, consider attack number 14 as a specific example from Table 15. The PANOPTIC threat actions and sub-actions that make up the attack map to the LINDDUN threat types of Linking, Non-repudiation, Detecting, and Data Disclosure. (Definitions of these are provided in <a class="reference external" href="../Appendix/appendixC.html">Appendix C</a>.) Neither Non-repudiation nor Detecting is relevant to this scenario and can be dropped from consideration. By sorting the dataflow analysis table (Table 12) on the LINDDUN threat designators it is then possible to review the dataflows related to Linking and Data Disclosure. Matching scenario components are then identified by sorting on the Dataflow column to group those entries involving physical samples. <a class="footnote-reference brackets" href="#id10" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></a> The dataflow analysis for the core example contains multiple instances involving physical samples susceptible to threat L2.2.1, profiling an individual. This validates attack 14 against the LINDDUN analysis. Based on both the LINDDUN threat and the PANOPTIC threat actions (profiling and revelation in particular), attack 14 clearly undermines predictability as well as disassociability, validating it against the PEOs. Therefore, we can conclude that this is a valid threat.</p>
 <p>As Table 15 indicates, all PANOPTIC attacks were successfully validated against LINDDUN threats and the LINDDUN-supported attacks validated against the PEOs. As a result, all the threats are candidates for responses.</p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id6" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id8" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">13</a><span class="fn-bracket">]</span></span>
 <p>While the diagram organizes the nodes by data action, dataflow segments may involve more than a single data action.</p>
 </aside>
-<aside class="footnote brackets" id="id7" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">13</a><span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id9" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">14</a><span class="fn-bracket">]</span></span>
+<p>Further discussion of cybersecurity supply chain risks can be found in the NIST Quick-Start Guides for Cybersecurity Supply Chain Risk Management (<a class="reference external" href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1305.pdf">https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1305.pdf</a>) and Due Diligence Assessment (<a class="reference external" href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1326.ipd.pdf">https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1326.ipd.pdf</a>).</p>
+</aside>
+<aside class="footnote brackets" id="id10" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">15</a><span class="fn-bracket">]</span></span>
 <p>In the core example the number of dataflows and associated threats is so limited that no sorting is necessary. In contrast, the complete example contains almost 100 itemized LINDDUN threats.</p>
 </aside>
 </aside>

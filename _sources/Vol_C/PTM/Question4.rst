@@ -8,7 +8,7 @@ This section provides guidelines on how to address Question 4 and suggests addit
 Did We Do a Good Job Documenting the System and Its Data Actions?
 -----------------------------------------------------------------
 
-`Question 1 <PTM/Question1.html>`__ documents the system context, including PANOPTIC Contextual Domain mappings and DFDs. DFDs directly support threat identification and analysis while Contextual Domain mappings indirectly support the process. In comparison to cybersecurity threat modeling, threats related to privacy can arise from systems operating as designed therefore trust boundaries are a concept that is not used. As such, the entirety of the system is potentially relevant for privacy analysis.
+`Question 1 <Question1.html>`__ documents the system context, including PANOPTIC Contextual Domain mappings and DFDs. DFDs directly support threat identification and analysis while Contextual Domain mappings indirectly support the process. In comparison to cybersecurity threat modeling, threats related to privacy can arise from systems operating as designed therefore trust boundaries are a concept that is not used. As such, the entirety of the system is potentially relevant for privacy analysis.
 
 The following activities could potentially improve the documentation of the system and its data actions:
 
@@ -29,13 +29,13 @@ The following activities could potentially improve the documentation of the syst
 Did we do a good job identifying and documenting threats?
 ---------------------------------------------------------
 
-To answer, “Did we do a good job?” on Question 2, “What could go wrong?” the project team evaluated whether the threat model adequately identified and documented threats to data subjects. `Question 2 <PTM/Question2.html>`__ enumerates the threats identified for the core example based on the LINDDUN dataflow analysis and the PANOPTIC attacks, with the results for the complete example documented in `Appendix F <PTM/AppendixF.html>`_. The following actions could improve threat identification.
+To answer, “Did we do a good job?” on Question 2, “What could go wrong?” the project team evaluated whether the threat model adequately identified and documented threats to data subjects. `Question 2 <Question2.html>`__ enumerates the threats identified for the core example based on the LINDDUN dataflow analysis and the PANOPTIC attacks, with the results for the complete example documented in `Appendix F <../Appendix/appendixF.html>`_. The following actions could improve threat identification.
 
 **Evaluate the comprehensiveness of the LINDDUN analysis.** The LINDDUN per element threat mapping heuristic shown in Table 11 acts as a completeness check. With this table, a completeness check can be done for the typical threats against external entities, processes, data stores, and dataflows. If there are possible threats that were not considered by the team, this highlights an area for additional consideration. Maintaining a checklist for each dataflow segment by making and marking copies of Table 11 could help prevent potentially relevant threats from being overlooked.
 
 **Evaluate the comprehensiveness of the identified PANOPTIC threat actions.** When evaluating the PANOPTIC attacks:
 
-- Consider attacks that have occurred in the genomic stakeholder community and closely adjacent industries. Threat intelligence can be used to identify attacks favored by actors who are known to target an industry. The Bioeconomy Information Sharing and Analysis Center (BIO-ISAC) is one potential source of such intelligence. [16]_ 
+- Consider attacks that have occurred in the genomic stakeholder community and closely adjacent industries. Threat intelligence can be used to identify attacks favored by actors who are known to target an industry. The Bioeconomy Information Sharing and Analysis Center (BIO-ISAC) is one potential source of such intelligence. [18]_ 
 
 - Consider whether the identified scenarios and selected PANOPTIC threat actions reflect these attacks, or if additional scenarios and/or threat actions should be considered.  
 
@@ -48,19 +48,19 @@ To answer, “Did we do a good job?” on Question 2, “What could go wrong?”
 Did we do a good job mitigating the threats?
 --------------------------------------------
 
-`Question 3 <PTM/Question3.html>`__ discussed the kinds of responses to the identified threats that might be considered. More specifically, using one of the attacks in the core example, it illustrated how to intervene by disrupting the threat using standard controls by reasoning from the attack to particular controls by way of the NIST PF.
+`Question 3 <Question3.html>`__ discussed the kinds of responses to the identified threats that might be considered. More specifically, using one of the attacks in the core example, it illustrated how to intervene by disrupting the threat using standard controls by reasoning from the attack to particular controls by way of the NIST PF.
 
 The following actions could evaluate and improve on this approach:
 
 - Review interventions to assess how well they address the LINDDUN threats associated with the attacks.
 
-- Expand interventions to cover additional PF Subcategories beyond those that were addressed based on the prioritizations in the Genomic Data Profile for the Mission Objectives that have been established. (See `Organizational Tailoring in Appendix C <Appendix/appendixC.html>`__.)
+- Expand interventions to cover additional PF Subcategories beyond those that were addressed based on the prioritizations in the Genomic Data Profile for the Mission Objectives that have been established. (See `Organizational Tailoring in Appendix C <../Appendix/appendixC.html#organizational-tailoring>`__.)
 
 - Review the documentation from Question 1 to check which, if any, interventions may already be present.
 
 - If the answers to Questions 1 and/or 2 have changed, revisit the relevant response determinations.
 
-- Develop a surveillance plan that incorporates any findings from assessments, tabletop exercises, or ongoing vulnerability monitoring using available resources [17]_ and documents how they will be integrated into future threat modeling activities.
+- Develop a surveillance plan that incorporates any findings from assessments, tabletop exercises, or ongoing vulnerability monitoring using available resources [19]_ and documents how they will be integrated into future threat modeling activities.
 
 Additional Activities
 ---------------------
@@ -79,7 +79,7 @@ The following additional actions help evaluate the thoroughness of responses and
 
 **Review PANOPTIC Attacks.** If there are interventions in place that disrupt multiple common threat actions, that can be a positive indication of the layering of controls, which supports robust privacy protection.
 
-**Utilize Framework Profiles.** Teams can use the Genomic Data Profile to identify further interventions by considering additional priority Subcategories for each relevant Mission Objective. (See `Organizational Tailoring in Appendix C <Appendix/appendixC.html>`__.) Alternatively, PF Subcategories associated with the disruptions selected during Question 3 activities can be used to inform an organization’s PF Target Profile, which could leverage a Community Profile such as the Genomic Data Profile. The organization can then identify potential gaps by comparing its Current Profile to its Target Profile.
+**Utilize Framework Profiles.** Teams can use the Genomic Data Profile to identify further interventions by considering additional priority Subcategories for each relevant Mission Objective. (See `Organizational Tailoring in Appendix C <../Appendix/appendixC.html#organizational-tailoring>`__.) Alternatively, PF Subcategories associated with the disruptions selected during Question 3 activities can be used to inform an organization’s PF Target Profile, which could leverage a Community Profile such as the Genomic Data Profile. The organization can then identify potential gaps by comparing its Current Profile to its Target Profile.
 
 **Track Interventions Throughout the System Life Cycle.** Threat interventions should be documented, reviewed, tested, and maintained as the threat environment changes. This may include the following considerations:
 
@@ -93,8 +93,8 @@ The following additional actions help evaluate the thoroughness of responses and
 
 - •	Tabletop and functional exercises as described in SP 800-84 [Ref12]_ can also be very helpful in evaluating Question 3 performance and can be done both before and after a system is in use.
 
-.. [16]
+.. [18]
     https://www.isac.bio/
 
-.. [17]
+.. [19]
     https://nvd.nist.gov

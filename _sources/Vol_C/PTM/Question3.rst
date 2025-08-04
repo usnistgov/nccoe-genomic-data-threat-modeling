@@ -5,7 +5,7 @@ Once threats have been validated, decisions must be made regarding how to respon
 
 1. **Eliminate.** This is the most desired outcome; however, it is often challenging and may involve forgoing a specific feature or functionality. For example, in the case of attack number 1 in the core example (Table 15), removing the receiving clerk from the pipeline by sending physical samples directly to the relevant lab technician would introduce logistical complications that could prove infeasible. If a feature or function is required to accomplish one of the use case’s Mission Objectives (MOs), then eliminating the threat is not possible.
 
-2. **Disrupt.** This involves identifying, adding, and/or improving controls to frustrate attacks. For example, the nexus of attack number 1 in the core example is single source profiling. Controls targeting this threat action would disrupt the entire attack. This is explored in more detail in `Section 3 <PTM/Question3.html#response-determination>`__.
+2. **Disrupt.** This involves identifying, adding, and/or improving controls to frustrate attacks. For example, the nexus of attack number 1 in the core example is single source profiling. Controls targeting this threat action would disrupt the entire attack. This is explored in more detail in `Response Determination <Question3.html#response-determination>`__.
 
 3. **Transfer Responsibility.** This strategy transfers responsibility for addressing the threat to another entity, who may have resources of their own to intervene or who can better tolerate the presence of the threat. Documentation of this responsibility transfer and appropriate agreements are an important aspect for implementing this option.
 
@@ -104,7 +104,7 @@ Once all validated threats have had feasibility and difficulty values assigned, 
    | Non-repudiation                              | 0.2                   |
    +----------------------------------------------+-----------------------+
 
-These values and weights were multiplied for each attack and the results used to rank order the threats in the core example from highest to lowest priority, as shown in Table 20. (Ties are resolved using attack number.) The prioritization of threats for the complete example is provided in `Appendix G <Appendix/appendixG.html>`_. 
+These values and weights were multiplied for each attack and the results used to rank order the threats in the core example from highest to lowest priority, as shown in Table 20. (Ties are resolved using attack number.) The prioritization of threats for the complete example is provided in `Appendix G <../Appendix/appendixG.html>`_. 
 
 .. table:: Table 20. Core Example Threats in Ranked Order from Highest to Lowest Priority
 
@@ -141,7 +141,7 @@ High-priority threats tend to readily give rise to decisions to intervene (typic
 
 Attack number 14 involves a seemingly unavoidable dataflow, so simply eliminating the dataflow is not an option, nor is there any obvious way of transferring responsibility. This leaves the option of either accepting the presence of the threat or disrupting it. Determining which course to pursue may require first exploring disruption options so that their viability may be considered.
 
-There are several reference sources for such controls, but one of the most prominent is NIST Special Publication (SP) 800-53r5, Security and Privacy Controls for Information Systems and Organizations [Ref6]_. However, different organizations may have varying resources and expertise for selecting controls and control enhancements relevant to given threats. Though organizations may have different approaches to this process, the following describes a way of facilitating the process to map from individual PANOPTIC threat actions to candidate controls using the NIST Privacy Framework, leveraging NIST’s crosswalk[14]_ from PF Subcategories to 800-53 controls.
+There are several reference sources for such controls, but one of the most prominent is NIST Special Publication (SP) 800-53r5, Security and Privacy Controls for Information Systems and Organizations [Ref6]_. However, different organizations may have varying resources and expertise for selecting controls and control enhancements relevant to given threats. Though organizations may have different approaches to this process, the following describes a way of facilitating the process to map from individual PANOPTIC threat actions to candidate controls using the NIST Privacy Framework, leveraging NIST’s crosswalk [16]_ from PF Subcategories to 800-53 controls.
 
 Handling a large number of candidate controls, even after duplicates are accounted for, requires a reduction step. One way of further constraining the effort is to focus on critical PANOPTIC threat actions. These are threat actions that others are dependent upon; disrupting critical threat actions in effect invalidates the attack. In attack number 14, the critical threat action is single source profiling. The threat actions that enable it (Recording and Biological sample) are unavoidable while the remaining threat actions (Affording revelations and Implication) are enabled by it. Focusing on single source profiling (and its associated LINDDUN threat) results in a set of less than 20 candidate controls. Appendix C shows this winnowing process, starting from the two PF Categories implicated by this threat action, mapping from the Categories to the relevant Subcategories, and from the Subcategories to the relevant 800-53 controls. 
 
@@ -201,7 +201,7 @@ Each Privacy Framework Subcategory includes this tuple that indicates the Genomi
    | Protect-P – Protective Technology         | PR.PT-P2: The principle of least functionality is incorporated by configuring systems to provide only essential capabilities [3 2 2 2] | CM-7                | Configuration Management              |
    +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------------------+
 
-Once the set of potentially applicable controls has been narrowed down in this way, the tuples derived from MO 2, MO 3, MO 5, and MO 12 can be used to prioritize the Subcategories and by extension control selection.[15]_  MO 2, which deals with privacy risk to relatives, is not relevant for this attack and can be ignored. MO 12, which addresses use of privacy-enhancing technologies (PETs), assigns the same priority to all three Subcategories and can also be ignored as it does not contribute any differentiation. The prioritizations for MO 3 and MO 5, however, readily yield an ordering of (1) CT.D-P2 [2 1], (2) PR.PT-P2 [2 2], (3) CT.DP-P3 [3 2].
+Once the set of potentially applicable controls has been narrowed down in this way, the tuples derived from MO 2, MO 3, MO 5, and MO 12 can be used to prioritize the Subcategories and by extension control selection. [17]_  MO 2, which deals with privacy risk to relatives, is not relevant for this attack and can be ignored. MO 12, which addresses use of privacy-enhancing technologies (PETs), assigns the same priority to all three Subcategories and can also be ignored as it does not contribute any differentiation. The prioritizations for MO 3 and MO 5, however, readily yield an ordering of (1) CT.D-P2 [2 1], (2) PR.PT-P2 [2 2], (3) CT.DP-P3 [3 2].
 
 Reviewing the controls associated with CT.DP-P2 for those that appear most relevant or impactful, we find two candidates:
 
@@ -223,8 +223,8 @@ While in this case one might well have arrived at the same or similar conclusion
 
 It stands to reason that similar threats should respond to similar interventions, so in principle these disruptions should be applicable to all instances of the scenario, addressing attacks 1 through 5 as well as attack number 15. This also applies to other intervention types. One might also potentially identify similar attacks in different scenarios by searching on the associated critical threat actions and/or specific LINDDUN threats. Further, selection of controls that show up frequently across disruptions may offer greater cost-effectiveness, as long as care is taken to ensure that all targeted threats are sufficiently addressed. Also, given that some threats involve 3rd parties, controls that focus on agreements or those such as CA-02 Control Assessments and CA-03 Information Exchange may offer interventions that address multiple threats. 
 
-.. [14]
+.. [16]
    https://github.com/usnistgov/PrivacyFrmwkResources/raw/master/resources/NIST%20SP%20800-53%20Crosswalk/csf-pf-to-sp800-53r5-mappings.xlsx 
 
-.. [15]
+.. [17]
    While in principle the Mission Objectives could be employed to prioritize threats rather than controls, the MOs selected for this workflow provide insufficient differentiation; MOs 3, 5, and 12 will be implicated by most threats.

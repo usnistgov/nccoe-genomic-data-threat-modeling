@@ -394,7 +394,7 @@ document.write(`
 <p>This section provides guidelines on how to address Question 4 and suggests additional activities that can be used by teams to evaluate their efforts. The threat modeling documentation in the form of adapted PRAM Worksheets 1 and 2 should be reviewed and updated periodically to address new threats, system changes, new assumptions, and changes in risk tolerance.</p>
 <section id="did-we-do-a-good-job-documenting-the-system-and-its-data-actions">
 <h2>Did We Do a Good Job Documenting the System and Its Data Actions?<a class="headerlink" href="#did-we-do-a-good-job-documenting-the-system-and-its-data-actions" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="PTM/Question1.html">Question 1</a> documents the system context, including PANOPTIC Contextual Domain mappings and DFDs. DFDs directly support threat identification and analysis while Contextual Domain mappings indirectly support the process. In comparison to cybersecurity threat modeling, threats related to privacy can arise from systems operating as designed therefore trust boundaries are a concept that is not used. As such, the entirety of the system is potentially relevant for privacy analysis.</p>
+<p><a class="reference external" href="Question1.html">Question 1</a> documents the system context, including PANOPTIC Contextual Domain mappings and DFDs. DFDs directly support threat identification and analysis while Contextual Domain mappings indirectly support the process. In comparison to cybersecurity threat modeling, threats related to privacy can arise from systems operating as designed therefore trust boundaries are a concept that is not used. As such, the entirety of the system is potentially relevant for privacy analysis.</p>
 <p>The following activities could potentially improve the documentation of the system and its data actions:</p>
 <ul class="simple">
 <li><p>Review the system scope to ensure that it has captured the full breadth of data and data actions.</p></li>
@@ -408,11 +408,11 @@ document.write(`
 </section>
 <section id="did-we-do-a-good-job-identifying-and-documenting-threats">
 <h2>Did we do a good job identifying and documenting threats?<a class="headerlink" href="#did-we-do-a-good-job-identifying-and-documenting-threats" title="Link to this heading">#</a></h2>
-<p>To answer, “Did we do a good job?” on Question 2, “What could go wrong?” the project team evaluated whether the threat model adequately identified and documented threats to data subjects. <a class="reference external" href="PTM/Question2.html">Question 2</a> enumerates the threats identified for the core example based on the LINDDUN dataflow analysis and the PANOPTIC attacks, with the results for the complete example documented in <a class="reference external" href="PTM/AppendixF.html">Appendix F</a>. The following actions could improve threat identification.</p>
+<p>To answer, “Did we do a good job?” on Question 2, “What could go wrong?” the project team evaluated whether the threat model adequately identified and documented threats to data subjects. <a class="reference external" href="Question2.html">Question 2</a> enumerates the threats identified for the core example based on the LINDDUN dataflow analysis and the PANOPTIC attacks, with the results for the complete example documented in <a class="reference external" href="../Appendix/appendixF.html">Appendix F</a>. The following actions could improve threat identification.</p>
 <p><strong>Evaluate the comprehensiveness of the LINDDUN analysis.</strong> The LINDDUN per element threat mapping heuristic shown in Table 11 acts as a completeness check. With this table, a completeness check can be done for the typical threats against external entities, processes, data stores, and dataflows. If there are possible threats that were not considered by the team, this highlights an area for additional consideration. Maintaining a checklist for each dataflow segment by making and marking copies of Table 11 could help prevent potentially relevant threats from being overlooked.</p>
 <p><strong>Evaluate the comprehensiveness of the identified PANOPTIC threat actions.</strong> When evaluating the PANOPTIC attacks:</p>
 <ul class="simple">
-<li><p>Consider attacks that have occurred in the genomic stakeholder community and closely adjacent industries. Threat intelligence can be used to identify attacks favored by actors who are known to target an industry. The Bioeconomy Information Sharing and Analysis Center (BIO-ISAC) is one potential source of such intelligence. <a class="footnote-reference brackets" href="#id5" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></a></p></li>
+<li><p>Consider attacks that have occurred in the genomic stakeholder community and closely adjacent industries. Threat intelligence can be used to identify attacks favored by actors who are known to target an industry. The Bioeconomy Information Sharing and Analysis Center (BIO-ISAC) is one potential source of such intelligence. <a class="footnote-reference brackets" href="#id5" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></a></p></li>
 <li><p>Consider whether the identified scenarios and selected PANOPTIC threat actions reflect these attacks, or if additional scenarios and/or threat actions should be considered.</p></li>
 <li><p>Determine whether the threats being considered adequately reflect the threats listed in published documents for the genomic community, such as NIST IR 8432 <a class="reference internal" href="../Appendix/appendixB.html#ref11" id="id2"><span>[Ref11]</span></a>.</p></li>
 </ul>
@@ -421,14 +421,14 @@ document.write(`
 </section>
 <section id="did-we-do-a-good-job-mitigating-the-threats">
 <h2>Did we do a good job mitigating the threats?<a class="headerlink" href="#did-we-do-a-good-job-mitigating-the-threats" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="PTM/Question3.html">Question 3</a> discussed the kinds of responses to the identified threats that might be considered. More specifically, using one of the attacks in the core example, it illustrated how to intervene by disrupting the threat using standard controls by reasoning from the attack to particular controls by way of the NIST PF.</p>
+<p><a class="reference external" href="Question3.html">Question 3</a> discussed the kinds of responses to the identified threats that might be considered. More specifically, using one of the attacks in the core example, it illustrated how to intervene by disrupting the threat using standard controls by reasoning from the attack to particular controls by way of the NIST PF.</p>
 <p>The following actions could evaluate and improve on this approach:</p>
 <ul class="simple">
 <li><p>Review interventions to assess how well they address the LINDDUN threats associated with the attacks.</p></li>
-<li><p>Expand interventions to cover additional PF Subcategories beyond those that were addressed based on the prioritizations in the Genomic Data Profile for the Mission Objectives that have been established. (See <a class="reference external" href="Appendix/appendixC.html">Organizational Tailoring in Appendix C</a>.)</p></li>
+<li><p>Expand interventions to cover additional PF Subcategories beyond those that were addressed based on the prioritizations in the Genomic Data Profile for the Mission Objectives that have been established. (See <a class="reference external" href="../Appendix/appendixC.html#organizational-tailoring">Organizational Tailoring in Appendix C</a>.)</p></li>
 <li><p>Review the documentation from Question 1 to check which, if any, interventions may already be present.</p></li>
 <li><p>If the answers to Questions 1 and/or 2 have changed, revisit the relevant response determinations.</p></li>
-<li><p>Develop a surveillance plan that incorporates any findings from assessments, tabletop exercises, or ongoing vulnerability monitoring using available resources <a class="footnote-reference brackets" href="#id6" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></a> and documents how they will be integrated into future threat modeling activities.</p></li>
+<li><p>Develop a surveillance plan that incorporates any findings from assessments, tabletop exercises, or ongoing vulnerability monitoring using available resources <a class="footnote-reference brackets" href="#id6" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>19<span class="fn-bracket">]</span></a> and documents how they will be integrated into future threat modeling activities.</p></li>
 </ul>
 </section>
 <section id="additional-activities">
@@ -442,7 +442,7 @@ document.write(`
 </ul>
 <p><strong>Update DFDs.</strong> As interventions are added, DFDs may need to be updated. The possibility of new threats against changed or added elements should be considered. If new threats arise from changes, appropriate responses must be determined, which could include reconsidering the intervention.</p>
 <p><strong>Review PANOPTIC Attacks.</strong> If there are interventions in place that disrupt multiple common threat actions, that can be a positive indication of the layering of controls, which supports robust privacy protection.</p>
-<p><strong>Utilize Framework Profiles.</strong> Teams can use the Genomic Data Profile to identify further interventions by considering additional priority Subcategories for each relevant Mission Objective. (See <a class="reference external" href="Appendix/appendixC.html">Organizational Tailoring in Appendix C</a>.) Alternatively, PF Subcategories associated with the disruptions selected during Question 3 activities can be used to inform an organization’s PF Target Profile, which could leverage a Community Profile such as the Genomic Data Profile. The organization can then identify potential gaps by comparing its Current Profile to its Target Profile.</p>
+<p><strong>Utilize Framework Profiles.</strong> Teams can use the Genomic Data Profile to identify further interventions by considering additional priority Subcategories for each relevant Mission Objective. (See <a class="reference external" href="../Appendix/appendixC.html#organizational-tailoring">Organizational Tailoring in Appendix C</a>.) Alternatively, PF Subcategories associated with the disruptions selected during Question 3 activities can be used to inform an organization’s PF Target Profile, which could leverage a Community Profile such as the Genomic Data Profile. The organization can then identify potential gaps by comparing its Current Profile to its Target Profile.</p>
 <p><strong>Track Interventions Throughout the System Life Cycle.</strong> Threat interventions should be documented, reviewed, tested, and maintained as the threat environment changes. This may include the following considerations:</p>
 <ul class="simple">
 <li><p>During the implementation phase, threat modeling should be periodically revisited and updated. Consider whether the intervention caused problems and if so, what were the impacts.</p></li>
@@ -456,11 +456,11 @@ document.write(`
 </ul>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id5" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">16</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">18</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://www.isac.bio/">https://www.isac.bio/</a></p>
 </aside>
 <aside class="footnote brackets" id="id6" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">17</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">19</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://nvd.nist.gov">https://nvd.nist.gov</a></p>
 </aside>
 </aside>
