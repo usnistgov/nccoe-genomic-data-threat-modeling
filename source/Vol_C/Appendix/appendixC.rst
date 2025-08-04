@@ -59,9 +59,9 @@ LINDDUN heavily relies on DFDs, which are especially useful for data privacy ana
 MITRE PANOPTIC
 ~~~~~~~~~~~~~~~
 
-Just as LINDDUN [Ref2]_ roughly mirrors STRIDE, PANOPTIC [Ref3]_ roughly mirrors MITRE ATT&CK. Like ATT&CK, PANOPTIC (Pattern and Action Nomenclature Of Privacy Threats In Context) was created from the bottom up based on real-world privacy attacks drawn from multiple sources. However, PANOPTIC looks and works rather differently. PANOPTIC consists of two closely related taxonomies: Contextual Domains (made up of contextual elements) and Privacy Activities (made up of privacy threat actions). The Contextual Domains, as the name suggests, capture important contextual aspects of the system of concern, including how it interacts with data subjects and the nature of the data. Privacy Activities describe the various components of a privacy attack and are a mixture of Fair Information Practice Principles, information life cycle stages such as collection and processing, and independent components such as identification. Contextual elements and privacy threat actions may have sub-elements and sub-actions respectively. *Table 23* lists the Contextual Domains and definitions while *Table 24* lists the Privacy Activities and definitions. [Ref2]_
+Just as LINDDUN [Ref2]_ roughly mirrors STRIDE, PANOPTIC [Ref3]_ roughly mirrors MITRE ATT&CK. Like ATT&CK, PANOPTIC (Pattern and Action Nomenclature Of Privacy Threats In Context) was created from the bottom up based on real-world privacy attacks drawn from multiple sources. However, PANOPTIC looks and works rather differently. PANOPTIC consists of two closely related taxonomies: Contextual Domains (made up of contextual elements) and Privacy Activities (made up of privacy threat actions). The Contextual Domains, as the name suggests, capture important contextual aspects of the system of concern, including how it interacts with data subjects and the nature of the data. Privacy Activities describe the various components of a privacy attack and are a mixture of Fair Information Practice Principles, information life cycle stages such as collection and processing, and independent components such as identification. Contextual elements and privacy threat actions may have sub-elements and sub-actions respectively. *Appendix Table 1* lists the Contextual Domains and definitions while *Appendix Table 2* lists the Privacy Activities and definitions. [Ref2]_
 
-.. table:: Table 23. PANOPTIC V2.0 Contextual Domains
+.. table:: Appendix Table 1. PANOPTIC V2.0 Contextual Domains
 
    +--------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | **ID** | **Contextual Domain** | **Definition**                                                                                                                                                       |
@@ -77,7 +77,7 @@ Just as LINDDUN [Ref2]_ roughly mirrors STRIDE, PANOPTIC [Ref3]_ roughly mirrors
    | PC05   | Data Type             | Classes of data upon which data actions are performed                                                                                                                |
    +--------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. table:: Table 24. PANOPTIC V2.0 Privacy Activities
+.. table:: Appendix Table 2. PANOPTIC V2.0 Privacy Activities
 
    +--------+-------------------------+-----------------------------------------------------------------------------------------------------------+
    | **ID** | **Privacy Activity**    | **Definition**                                                                                            |
@@ -131,9 +131,9 @@ Organizational Tailoring
 
 Organizations that process genomic data need to protect that data due to its high value and the privacy risk to individuals. Organizations need a process to guide the selection of appropriate capabilities to reduce privacy risk to an acceptable level for the predictability, manageability, and disassociability of systems that process genomic data. Each organization should consider its own goals and priorities when tailoring this example to select and implement appropriate and cost-effective privacy capabilities and threat interventions. The organization should also periodically reassess its privacy posture and update its threat modeling as necessary, considering new technologies and threats to identify gaps and reprioritize interventions.
 
-NIST IR 8467, the *Genomic Data Profile* [Ref4]_ , provides a prioritized list of Mission Objectives (MOs) for organizations processing genomic data and prioritizes NIST Privacy Framework (PF) version 1.0 Subcategories (or outcomes) to support achieving those MOs. Based on the workflow of sequencing genomic material, the NCCoE team selected four relevant MOs from the *Genomic Data Profile* [Ref4]_, shown in *Table 25.* However, depending on their context, organizations may choose to prioritize an alternative set of MOs.
+NIST IR 8467, the *Genomic Data Profile* [Ref4]_ , provides a prioritized list of Mission Objectives (MOs) for organizations processing genomic data and prioritizes NIST Privacy Framework (PF) version 1.0 Subcategories (or outcomes) to support achieving those MOs. Based on the workflow of sequencing genomic material, the NCCoE team selected four relevant MOs from the *Genomic Data Profile* [Ref4]_, shown in *Appendix Table 3.* However, depending on their context, organizations may choose to prioritize an alternative set of MOs.
 
-.. table:: Table 25. Selected Genomic Sequencing Workflow Mission Objectives
+.. table:: Appendix Table 3. Selected Genomic Sequencing Workflow Mission Objectives
 
    +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
    | Mission Objective from the Genomic Data Profile | Mission Objective Description                                                                             |
