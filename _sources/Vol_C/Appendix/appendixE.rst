@@ -24,9 +24,7 @@ PANOPTIC Contextual Mapping for Research Use Case
 Dataflow Diagram Legend 
 -----------------------
 
-Table 25. Symbols Used in Detailed DFDs
-
-.. table:: Table 2. Symbols Used in Detailed DFDsData Flow Diagrams (DFDs) created by the team to document their work, showing trust boundaries and communication paths. These diagrams support STRIDE threat analysis and help create a common architecture document for collaboration. They follow conventions
+.. table:: Appendix Table 4. Symbols Used in Detailed DFDsData Flow Diagrams (DFDs) created by the team to document their work, showing trust boundaries and communication paths. These diagrams support STRIDE threat analysis and help create a common architecture document for collaboration. They follow conventions
 
    +-----------------+------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | **Element**     | **Symbol**                                                                                     | **Discussion**                                                                                                                                                                           |
