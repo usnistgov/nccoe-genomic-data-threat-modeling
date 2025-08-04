@@ -10,7 +10,7 @@ Four Question Framework
    :height: 3.16in
    :alt:  Visualization of the Four Question Framework for Threat Modeling
 
-   Appendix Figure 1. Visualization of the Four Question Framework for Threat Modeling [2]_
+   Appendix Figure 1. Visualization of the Four Question Framework for Threat Modeling
 
 This figure illustrates The Four Questions Framework for Threat Modeling. It starts with Question 1: What are we working on? From there, Question 2 is What could go wrong? Question 3 is What are we going to do about it? And Question 4 is Did we do a good job? The questions interconnect and will be revisited iteratively to improve the results.
 
@@ -28,8 +28,8 @@ It is expected that users of this process aiming to leverage the outputs documen
 
 Therefore, a comprehensive list of interventions and answers to Question 3 will not be provided in this paper. `Response Determination <../PTM/Question3.html#response-determination>`__ discusses the intervention identification process along with resources and an illustrative example. Individual organizations can also incorporate the threats into their risk modeling and assessment processes, addressing the resultant risks through elimination, mitigation, transfer, or acceptance.
 
-Privacy Threat Modeling
------------------------
+Genomic Data Threat Modeling for Privacy
+----------------------------------------
 
 Key characteristics of privacy threats are a superset of the characteristics of cybersecurity threats. Cybersecurity threats typically involve the actions of a malicious entity that is external to the system proper. This can be true of privacy threats as well, but not necessarily. While privacy threats can be active, they can also involve inactions, such as a failure to provide relevant information to direct data subjects or to obtain their consent for the collection and use of their data. Malicious privacy threats are certainly not unheard of, but privacy threats are just as often side effects of the pursuit of other objectives. Additionally, while threat actors can be external entities, sometimes it is the system itself, operating as designed, that poses the threat. One such privacy threat is insufficient de-identification, where the identity of an individual in a sensitive dataset, such as a rare disease database, can be determined using metadata and information from open-access or controlled-access genomic databases [Ref15]_.
 
@@ -38,13 +38,13 @@ As a result of these possibilities, privacy threat modeling must adopt a broader
 LINDDUN
 ~~~~~~~
 
-LINDDUN [Ref2]_ is one of the earliest and most widely recognized privacy threat modeling tools. Inspired by STRIDE [4]_, the name is an acronym comprising seven different privacy threat types:
+LINDDUN [Ref2]_ is one of the earliest and most widely recognized privacy threat modeling tools. Inspired by STRIDE, the name is an acronym comprising seven different privacy threat types:
 
 - Linking – Learning more about an individual (*or a group*) by associating related data items with one another
 
 - Identifying – Identity of an individual can be learned through leaks, deduced, or inferred when that is undesirable
 
-- Non-repudiation [1]_ – An individual is unable to deny certain claims pertaining to them as a result of data collected, data shared, or a system action taken by the individual or others
+- Non-repudiation – An individual is unable to deny certain claims pertaining to them as a result of data collected, data shared, or a system action taken by the individual or others
 
 - Detecting – Becoming aware of an individual’s involvement, membership, or participation via observation of relevant information
 
@@ -54,19 +54,19 @@ LINDDUN [Ref2]_ is one of the earliest and most widely recognized privacy threat
 
 - Non-compliance – Lack of adherence to statutory or regulatory requirements or to standards or best practices
 
-LINDDUN *[2]* heavily relies on DFDs, which are especially useful for data privacy analyses. Like STRIDE-per-Element [4]_, DFD elements vary in their relevance for different threat types. LINDDUN comes with a catalog of detailed threat trees that break down the high-level threat types into more granular threats that can be associated with specific DFD segments [Ref2]_.
+LINDDUN heavily relies on DFDs, which are especially useful for data privacy analyses. Like STRIDE-per-Element, DFD elements vary in their relevance for different threat types. LINDDUN comes with a catalog of detailed threat trees that break down the high-level threat types into more granular threats that can be associated with specific DFD segments [Ref2]_.
 
 MITRE PANOPTIC
 ~~~~~~~~~~~~~~~
 
-Just as LINDDUN [Ref2]_ roughly mirrors STRIDE [4]_, PANOPTIC [Ref3]_ roughly mirrors MITRE ATT&CK [5]_. Like ATT&CK, PANOPTIC (Pattern and Action Nomenclature Of Privacy Threats In Context) was created from the bottom up based on real-world privacy attacks drawn from multiple sources. However, PANOPTIC looks and works rather differently. PANOPTIC consists of two closely related taxonomies: Contextual Domains (made up of contextual elements) and Privacy Activities (made up of privacy threat actions). The Contextual Domains, as the name suggests, capture important contextual aspects of the system of concern, including how it interacts with data subjects and the nature of the data. Privacy Activities describe the various components of a privacy attack and are a mixture of Fair Information Practice Principles, information life cycle stages such as collection and processing, and independent components such as identification. Contextual elements and privacy threat actions may have sub-elements and sub-actions respectively. *Table 23* lists the Contextual Domains and definitions while *Table 24* lists the Privacy Activities and definitions. [Ref2]_
+Just as LINDDUN [Ref2]_ roughly mirrors STRIDE, PANOPTIC [Ref3]_ roughly mirrors MITRE ATT&CK. Like ATT&CK, PANOPTIC (Pattern and Action Nomenclature Of Privacy Threats In Context) was created from the bottom up based on real-world privacy attacks drawn from multiple sources. However, PANOPTIC looks and works rather differently. PANOPTIC consists of two closely related taxonomies: Contextual Domains (made up of contextual elements) and Privacy Activities (made up of privacy threat actions). The Contextual Domains, as the name suggests, capture important contextual aspects of the system of concern, including how it interacts with data subjects and the nature of the data. Privacy Activities describe the various components of a privacy attack and are a mixture of Fair Information Practice Principles, information life cycle stages such as collection and processing, and independent components such as identification. Contextual elements and privacy threat actions may have sub-elements and sub-actions respectively. *Table 23* lists the Contextual Domains and definitions while *Table 24* lists the Privacy Activities and definitions. [Ref2]_
 
 .. table:: Table 23. PANOPTIC V2.0 Contextual Domains
 
    +--------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | **ID** | **Contextual Domain** | **Definition**                                                                                                                                                       |
    +========+=======================+======================================================================================================================================================================+
-   | PC01   | Environment           | The type of contextual domain in which data actions [3]_ occur                                                                                                       |
+   | PC01   | Environment           | The type of contextual domain in which data actions occur.                                                                                                           |
    +--------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | PC02   | Distribution          | How many entities with which the information holder shares information                                                                                               |
    +--------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -90,17 +90,17 @@ Just as LINDDUN [Ref2]_ roughly mirrors STRIDE [4]_, PANOPTIC [Ref3]_ roughly mi
    +--------+-------------------------+-----------------------------------------------------------------------------------------------------------+
    | PA04   | Insecurity              | Insufficient data protection controls                                                                     |
    +--------+-------------------------+-----------------------------------------------------------------------------------------------------------+
-   | PA05   | Identification          | How information is associated with the data subject                                                       |
+   | PA05   | Identification          | How information is associated with the data subject                                                       |
    +--------+-------------------------+-----------------------------------------------------------------------------------------------------------+
-   | PA06   | Quality Assurance       | Implementing policies or processes to ensure quality throughout privacy-related activities                |
+   | PA06   | Quality Assurance       | Implementing policies or processes to ensure quality throughout privacy-related activities                |
    +--------+-------------------------+-----------------------------------------------------------------------------------------------------------+
-   | PA07   | Manageability [4]_      | Enabling the data subject or their proxy to access, modify, copy, or destroy information about themselves |
+   | PA07   | Manageability           | Enabling the data subject or their proxy to access, modify, copy, or destroy information about themselves |
    +--------+-------------------------+-----------------------------------------------------------------------------------------------------------+
    | PA08   | Aggregation             | Assembling data from one or more sets of data                                                             |
    +--------+-------------------------+-----------------------------------------------------------------------------------------------------------+
    | PA09   | Processing              | Extracting and developing value and utility from information                                              |
    +--------+-------------------------+-----------------------------------------------------------------------------------------------------------+
-   | PA10   | Sharing                 | Making information available to another entity                                                            |
+   | PA10   | Sharing                 | Making information available to another entity                                                            |
    +--------+-------------------------+-----------------------------------------------------------------------------------------------------------+
    | PA11   | Use                     | Leveraging information to achieve a goal                                                                  |
    +--------+-------------------------+-----------------------------------------------------------------------------------------------------------+
@@ -122,7 +122,7 @@ The NIST PRAM [Ref1]_ is a product of NIST’s Privacy Engineering Program. It i
 
 4. Selecting Controls
 
-The PRAM also leverages a non-exhaustive privacy risk model consisting of defined “Problematic Data Actions” – particular manifestations of the higher-level data actions corresponding to stages of the information life cycle [5]_, which could enable adverse effects for individuals – and “Problems for Individuals,” those adverse consequences. The PRAM is intended to help ensure systems reflect the PEOs listed in `Privacy Overview <../Introduction.html#privacy-overview>`__.
+The PRAM also leverages a non-exhaustive privacy risk model consisting of defined “Problematic Data Actions” – particular manifestations of the higher-level data actions corresponding to stages of the information life cycle, which could enable adverse effects for individuals – and “Problems for Individuals,” those adverse consequences. The PRAM is intended to help ensure systems reflect the PEOs listed in `Privacy Overview <../Introduction.html#privacy-overview>`__.
 
 As a risk modeling tool, the PRAM is broader than threat modeling. However, aspects of it can be readily adapted to directly accommodate privacy threat modeling. Therefore, the first two worksheets enumerated above were modified as necessary and used as the principal means of documenting the threat modeling described in this paper.
 

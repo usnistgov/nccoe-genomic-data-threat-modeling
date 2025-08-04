@@ -9,6 +9,8 @@ PANOPTIC Contextual Mapping for Clinical Use Case
 .. image:: media/Appendix-Figure2.png
    :width: 4.66663in
    :height: 8.09198in
+   :alt: Analysis results of PANOPTIC Contextual Mapping for clinical use case highlight elements in PANOPTIC table
+
 
 PANOPTIC Contextual Mapping for Research Use Case
 -------------------------------------------------
@@ -16,6 +18,8 @@ PANOPTIC Contextual Mapping for Research Use Case
 .. image:: media/Appendix-Figure3.png
    :width: 4.6in
    :height: 8in
+   :alt: Analysis results of PANOPTIC Contextual Mapping for research use case highlight elements in PANOPTIC table
+
 
 Dataflow Diagram Legend 
 -----------------------
@@ -55,22 +59,28 @@ Dataflow Diagram for Clinical Use Case
 
 .. figure:: media/Appendix-Figure4.png
    :width: 98%
+   :alt: Dataflow diagram including entities, process, data stores, dataflows, and human actors in the clinical use case
+
  
 Dataflow Diagram for Research Physical Use Case
 -----------------------------------------------
 
 .. figure:: media/Appendix-Figure5.png
    :width: 98%
+   :alt: Dataflow diagram including entities, process, data stores, dataflows, and human actors in the research use case
+
 
 Dataflow Diagram for Research Digital Use Case
 ----------------------------------------------
 
 .. figure:: media/Appendix-Figure6.png
    :width: 98%
+   :alt: Dataflow diagram including entities, process, data stores, dataflows, and human actors in the research digital use case
+
 
 Shared Dataflow Diagram
 -----------------------
 
 .. figure:: media/Appendix-Figure7.png
    :width: 98%
-
+   :alt: Dataflow diagram including entities, process, data stores, dataflows, and human actors for those shared between research and clinical
