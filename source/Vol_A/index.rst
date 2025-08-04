@@ -20,7 +20,7 @@ An Implementation for Genomic Data Sequencing and Analysis
 |                    | MITRE Corporation        |                    |                             |
 +--------------------+--------------------------+--------------------+-----------------------------+
 
-.. image:: media/Logos.png
+.. image:: ../media/Logos.png
    :alt: This graphic contains the logos for NIST and the NCCoE.
 
 INITIAL PUBLIC DRAFT
@@ -62,7 +62,7 @@ NIST Technical Series Publication Identifier Syntax `NIST Tech Pubs IDs <https:/
 -  Jared Sheldon: 0009-0009-7909-4217
 
 **FEEDBACK**
-You can view or download the draft guide at the `NCCoE Genomics Project Page <https://www.nccoe.nist.gov/projects/cybersecurity-and-privacy-genomic-data>`. 
+You can view or download the draft guide at the `NCCoE Genomics Project Page <https://www.nccoe.nist.gov/projects/cybersecurity-and-privacy-genomic-data>`__. 
 
 Comments on this publication may be submitted to: genomic_cybersecurity_nccoe@nist.gov.
 
