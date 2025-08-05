@@ -7,13 +7,12 @@ PANOPTIC – LINDDUN Mapping
 --------------------------
 
 .. image:: media/Appendix-Figure19.png
-   :width: 49%
-   :align: left
-   :alt: PANOPTIC to LINDUNN threat mappings
+   :width: 48%
+   :alt: PANOPTIC mappings
 .. image:: media/Appendix-Figure19b.png
-   :width: 49%
-   :align: right
-   :alt: LINDUNN to PANOPTIC threat mappings
+   :width: 48%
+   :alt: LINDUNN mappings
+
 
 
 Threat Validations and Ranking Attributes

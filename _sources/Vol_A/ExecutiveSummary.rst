@@ -30,6 +30,6 @@ To gain insights into actual processes and system designs, the NCCoE collaborate
 SHARE YOUR FEEDBACK
 ~~~~~~~~~~~~~~~~~~~
 
-You can view or download the SP 1800-series at https://www.nccoe.nist.gov/projects/cybersecurity-and-privacy-genomic-data. Help the NCCoE make this guide better by sharing your thoughts with us as you read the guide. If you adopt this solution for your own organization, please share your experience and advice with us. We recognize that technical solutions alone will not fully enable the benefits of our solution, so we encourage organizations to share lessons learned and best practices for implementing the processes associated with this guide. 
+You can view or download the SP 1800-series at https://cms.csrc.nist.gov/preview/pubs/sp/1800/43/ipd. Help the NCCoE make this guide better by sharing your thoughts with us as you read the guide. If you adopt this solution for your own organization, please share your experience and advice with us. We recognize that technical solutions alone will not fully enable the benefits of our solution, so we encourage organizations to share lessons learned and best practices for implementing the processes associated with this guide. 
 
 To provide comments or to learn more by arranging a demonstration of this example implementation, contact the NCCoE at genomic_cybersecurity_nccoe@nist.gov.

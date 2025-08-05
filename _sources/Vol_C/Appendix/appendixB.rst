@@ -9,11 +9,11 @@ Appendix B: References
 
 .. [Ref4] NIST. Privacy Framework. https://www.nist.gov/privacy-framework  
 
-.. [Ref5] Martin N, et al. (2023) Cybersecurity Framework Profile for Genomic Data. (National Institute of Standards and Technology, Gaithersburg, MD), Initial Public Draft NIST Interagency or Internal Report (IR) 8467. https://doi.org/10.6028/NIST.IR.8432 
+.. [Ref5] Martin N, et al. (2023) Cybersecurity Framework Profile for Genomic Data. (National Institute of Standards and Technology, Gaithersburg, MD), Initial Public Draft NIST Interagency or Internal Report (IR) 8467. https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8467.2pd.pdf
 
 .. [Ref6] National Institute of Standards and Technology (2025) Special Publication SP 800-53 Rev.5 https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final 
 
-.. [Ref7] Pulivarti R, Wagner J, Zook, J, Kreider B, Wilson K, Snyder J, Wojtyniak M, Ross S, Whitlow P, Sheldon J, Brown I, Pape P, Alim E (2024) Cybersecurity Threat Modeling the Genomic Data Sequencing Workflow: An example threat model implementation for genomic data sequencing and analysis. (National Institute of Standards and Technology, Gaithersburg, MD), NIST Cybersecurity White Paper (CSWP) NIST CSWP 35 ipd. https://doi.org/10.6028/NIST.CSWP.35  
+.. [Ref7] Pulivarti R, Wagner J, Zook, J, Kreider B, Wilson K, Snyder J, Wojtyniak M, Ross S, Whitlow P, Sheldon J, Brown I, Pape P, Alim E (2024) Cybersecurity Threat Modeling the Genomic Data Sequencing Workflow: An example threat model implementation for genomic data sequencing and analysis. (National Institute of Standards and Technology, Gaithersburg, MD), NIST Cybersecurity White Paper (CSWP) NIST CSWP 35 ipd. https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.35.ipd.pdf  
 
 .. [Ref8] Garfinkel S, Guttman B, Near J, Dajani A, Singer P (2023) De-identifying Government Datasets: Techniques and Governance. (National Institute of Standards and Technology, Gaithersburg, MD), NIST Special Publication 800-188. https://doi.org/10.6028/NIST.SP.800-188  
 

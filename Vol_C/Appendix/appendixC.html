@@ -397,11 +397,11 @@ document.write(`
 <p>As some genomic sequencers are classified as medical devices, the cybersecurity paper used the threat modeling approach described in the <em>Playbook for Threat Modeling Medical Devices (Playbook)</em> <a class="footnote-reference brackets" href="#id19" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> based on methods described in the “Threat Modeling Manifesto” <a class="footnote-reference brackets" href="#id20" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> and by Shostack <a class="footnote-reference brackets" href="#id21" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>. However, as noted above, privacy, though connected to cybersecurity, is distinct from it. Therefore, while this paper adheres to the high-level approaches of the Four Question Framework and the Threat Modeling Manifesto, it employs tools that are specific to privacy.</p>
 <section id="four-question-framework">
 <h2>Four Question Framework<a class="headerlink" href="#four-question-framework" title="Link to this heading">#</a></h2>
-<figure class="align-default" id="id24">
+<figure class="align-default" id="id25">
 <a class="reference internal image-reference" href="../../_images/Appendix-Figure1.png"><img alt="Visualization of the Four Question Framework for Threat Modeling" src="../../_images/Appendix-Figure1.png" style="width: 4.71in; height: 3.16in;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Appendix Figure 1. Visualization of the Four Question Framework for Threat Modeling</span><a class="headerlink" href="#id24" title="Link to this image">#</a></p>
+<p><span class="caption-text">Appendix Figure 1. Visualization of the Four Question Framework for Threat Modeling</span><a class="headerlink" href="#id25" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>This figure illustrates The Four Questions Framework for Threat Modeling. It starts with Question 1: What are we working on? From there, Question 2 is What could go wrong? Question 3 is What are we going to do about it? And Question 4 is Did we do a good job? The questions interconnect and will be revisited iteratively to improve the results.</p>
@@ -417,8 +417,8 @@ document.write(`
 </section>
 <section id="genomic-data-threat-modeling-for-privacy">
 <h2>Genomic Data Threat Modeling for Privacy<a class="headerlink" href="#genomic-data-threat-modeling-for-privacy" title="Link to this heading">#</a></h2>
-<p>Key characteristics of privacy threats are a superset of the characteristics of cybersecurity threats. Cybersecurity threats typically involve the actions of a malicious entity that is external to the system proper. This can be true of privacy threats as well, but not necessarily. While privacy threats can be active, they can also involve inactions, such as a failure to provide relevant information to direct data subjects or to obtain their consent for the collection and use of their data. Malicious privacy threats are certainly not unheard of, but privacy threats are just as often side effects of the pursuit of other objectives. Additionally, while threat actors can be external entities, sometimes it is the system itself, operating as designed, that poses the threat. One such privacy threat is insufficient de-identification, where the identity of an individual in a sensitive dataset, such as a rare disease database, can be determined using metadata and information from open-access or controlled-access genomic databases <span id="id4">[Ref15]</span>.</p>
-<p>As a result of these possibilities, privacy threat modeling must adopt a broader perspective than cybersecurity threat modeling. This broader perspective is reflected in the principal tools employed – the NIST PRAM <a class="reference internal" href="appendixB.html#ref1" id="id5"><span>[Ref1]</span></a>, LINDDUN <a class="reference internal" href="appendixB.html#ref2" id="id6"><span>[Ref2]</span></a>, and MITRE PANOPTIC <a class="reference internal" href="appendixB.html#ref3" id="id7"><span>[Ref3]</span></a>– each of which are described in the following subsections. Two of those tools, LINDDUN and PANOPTIC, were also selected because they roughly mirror the orientations of the tools – STRIDE <a class="footnote-reference brackets" href="#id22" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> and MITRE ATT&amp;CK <a class="footnote-reference brackets" href="#id23" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> respectively – that were used for the cybersecurity threat modeling in NIST CSWP 35 <a class="reference internal" href="appendixB.html#ref6" id="id10"><span>[Ref6]</span></a>.</p>
+<p>Key characteristics of privacy threats are a superset of the characteristics of cybersecurity threats. Cybersecurity threats typically involve the actions of a malicious entity that is external to the system proper. This can be true of privacy threats as well, but not necessarily. While privacy threats can be active, they can also involve inactions, such as a failure to provide relevant information to direct data subjects or to obtain their consent for the collection and use of their data. Malicious privacy threats are certainly not unheard of, but privacy threats are just as often side effects of the pursuit of other objectives. Additionally, while threat actors can be external entities, sometimes it is the system itself, operating as designed, that poses the threat. One such privacy threat is surname inference, where some aspects of an identity for an individual a dataset could determined linking multiple datasets with genomic databases <a class="footnote-reference brackets" href="#id24" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>.</p>
+<p>As a result of these possibilities, privacy threat modeling must adopt a broader perspective than cybersecurity threat modeling. This broader perspective is reflected in the principal tools employed – the NIST PRAM <a class="reference internal" href="appendixB.html#ref1" id="id5"><span>[Ref1]</span></a>, LINDDUN <a class="reference internal" href="appendixB.html#ref2" id="id6"><span>[Ref2]</span></a>, and MITRE PANOPTIC <a class="reference internal" href="appendixB.html#ref3" id="id7"><span>[Ref3]</span></a> – each of which are described in the following subsections. Two of those tools, LINDDUN and PANOPTIC, were also selected because they roughly mirror the orientations of the tools – STRIDE <a class="footnote-reference brackets" href="#id22" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> and MITRE ATT&amp;CK <a class="footnote-reference brackets" href="#id23" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> respectively – that were used for the cybersecurity threat modeling in NIST CSWP 35 <a class="reference internal" href="appendixB.html#ref7" id="id10"><span>[Ref7]</span></a>.</p>
 <section id="linddun">
 <h3>LINDDUN<a class="headerlink" href="#linddun" title="Link to this heading">#</a></h3>
 <p>LINDDUN <a class="reference internal" href="appendixB.html#ref2" id="id11"><span>[Ref2]</span></a> is one of the earliest and most widely recognized privacy threat modeling tools. Inspired by STRIDE, the name is an acronym comprising seven different privacy threat types:</p>
@@ -436,8 +436,8 @@ document.write(`
 <section id="mitre-panoptic">
 <h3>MITRE PANOPTIC<a class="headerlink" href="#mitre-panoptic" title="Link to this heading">#</a></h3>
 <p>Just as LINDDUN <a class="reference internal" href="appendixB.html#ref2" id="id13"><span>[Ref2]</span></a> roughly mirrors STRIDE, PANOPTIC <a class="reference internal" href="appendixB.html#ref3" id="id14"><span>[Ref3]</span></a> roughly mirrors MITRE ATT&amp;CK. Like ATT&amp;CK, PANOPTIC (Pattern and Action Nomenclature Of Privacy Threats In Context) was created from the bottom up based on real-world privacy attacks drawn from multiple sources. However, PANOPTIC looks and works rather differently. PANOPTIC consists of two closely related taxonomies: Contextual Domains (made up of contextual elements) and Privacy Activities (made up of privacy threat actions). The Contextual Domains, as the name suggests, capture important contextual aspects of the system of concern, including how it interacts with data subjects and the nature of the data. Privacy Activities describe the various components of a privacy attack and are a mixture of Fair Information Practice Principles, information life cycle stages such as collection and processing, and independent components such as identification. Contextual elements and privacy threat actions may have sub-elements and sub-actions respectively. <em>Appendix Table 1</em> lists the Contextual Domains and definitions while <em>Appendix Table 2</em> lists the Privacy Activities and definitions. <a class="reference internal" href="appendixB.html#ref2" id="id15"><span>[Ref2]</span></a></p>
-<div class="pst-scrollable-table-container"><table class="table" id="id25">
-<caption><span class="caption-text">Appendix Table 1. PANOPTIC V2.0 Contextual Domains</span><a class="headerlink" href="#id25" title="Link to this table">#</a></caption>
+<div class="pst-scrollable-table-container"><table class="table" id="id26">
+<caption><span class="caption-text">Appendix Table 1. PANOPTIC V2.0 Contextual Domains</span><a class="headerlink" href="#id26" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>ID</strong></p></th>
 <th class="head"><p><strong>Contextual Domain</strong></p></th>
@@ -468,8 +468,8 @@ document.write(`
 </tbody>
 </table>
 </div>
-<div class="pst-scrollable-table-container"><table class="table" id="id26">
-<caption><span class="caption-text">Appendix Table 2. PANOPTIC V2.0 Privacy Activities</span><a class="headerlink" href="#id26" title="Link to this table">#</a></caption>
+<div class="pst-scrollable-table-container"><table class="table" id="id27">
+<caption><span class="caption-text">Appendix Table 2. PANOPTIC V2.0 Privacy Activities</span><a class="headerlink" href="#id27" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>ID</strong></p></th>
 <th class="head"><p><strong>Privacy Activity</strong></p></th>
@@ -542,7 +542,7 @@ document.write(`
 <li><p>Prioritizing Risk</p></li>
 <li><p>Selecting Controls</p></li>
 </ol>
-<p>The PRAM also leverages a non-exhaustive privacy risk model consisting of defined “Problematic Data Actions” – particular manifestations of the higher-level data actions corresponding to stages of the information life cycle, which could enable adverse effects for individuals – and “Problems for Individuals,” those adverse consequences. The PRAM is intended to help ensure systems reflect the PEOs listed in <a class="reference external" href="../Introduction.html#privacy-overview">Privacy Overview</a>.</p>
+<p>The PRAM also leverages a non-exhaustive privacy risk model consisting of defined “Problematic Data Actions” – particular manifestations of the higher-level data actions corresponding to stages of the information life cycle, which could enable adverse effects for individuals – and “Problems for Individuals,” those adverse consequences. The PRAM is intended to help ensure systems reflect the PEOs listed in <a class="reference external" href="../Introduction.html#privacy-landscape">Privacy Overview</a>.</p>
 <p>As a risk modeling tool, the PRAM is broader than threat modeling. However, aspects of it can be readily adapted to directly accommodate privacy threat modeling. Therefore, the first two worksheets enumerated above were modified as necessary and used as the principal means of documenting the threat modeling described in this paper.</p>
 </section>
 </section>
@@ -550,8 +550,8 @@ document.write(`
 <h2>Organizational Tailoring<a class="headerlink" href="#organizational-tailoring" title="Link to this heading">#</a></h2>
 <p>Organizations that process genomic data need to protect that data due to its high value and the privacy risk to individuals. Organizations need a process to guide the selection of appropriate capabilities to reduce privacy risk to an acceptable level for the predictability, manageability, and disassociability of systems that process genomic data. Each organization should consider its own goals and priorities when tailoring this example to select and implement appropriate and cost-effective privacy capabilities and threat interventions. The organization should also periodically reassess its privacy posture and update its threat modeling as necessary, considering new technologies and threats to identify gaps and reprioritize interventions.</p>
 <p>NIST IR 8467, the <em>Genomic Data Profile</em> <a class="reference internal" href="appendixB.html#ref4" id="id17"><span>[Ref4]</span></a> , provides a prioritized list of Mission Objectives (MOs) for organizations processing genomic data and prioritizes NIST Privacy Framework (PF) version 1.0 Subcategories (or outcomes) to support achieving those MOs. Based on the workflow of sequencing genomic material, the NCCoE team selected four relevant MOs from the <em>Genomic Data Profile</em> <a class="reference internal" href="appendixB.html#ref4" id="id18"><span>[Ref4]</span></a>, shown in <em>Appendix Table 3.</em> However, depending on their context, organizations may choose to prioritize an alternative set of MOs.</p>
-<div class="pst-scrollable-table-container"><table class="table" id="id27">
-<caption><span class="caption-text">Appendix Table 3. Selected Genomic Sequencing Workflow Mission Objectives</span><a class="headerlink" href="#id27" title="Link to this table">#</a></caption>
+<div class="pst-scrollable-table-container"><table class="table" id="id28">
+<caption><span class="caption-text">Appendix Table 3. Selected Genomic Sequencing Workflow Mission Objectives</span><a class="headerlink" href="#id28" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Mission Objective from the Genomic Data Profile</p></th>
 <th class="head"><p>Mission Objective Description</p></th>
@@ -581,7 +581,7 @@ document.write(`
 </aside>
 <aside class="footnote brackets" id="id20" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
-<p>Shostack A (2014) Threat Modeling: Designing for Security (Wiley, Hoboken, NJ) 1st Ed. Available at <a class="reference external" href="https://www.wiley.com/en-us/Threat+Modeling%3A+Designing+Security-p-9781118809990">https://www.wiley.com/en-us/Threat+Modeling%3A+Designing+Security-p-9781118809990</a></p>
+<p>Shostack, Adam. Threat modeling: Designing for security. John wiley &amp; sons, 2014.</p>
 </aside>
 <aside class="footnote brackets" id="id21" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
@@ -589,11 +589,15 @@ document.write(`
 </aside>
 <aside class="footnote brackets" id="id22" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">4</a><span class="fn-bracket">]</span></span>
-<p>The STRIDE Threat Model. Available at <a class="reference external" href="https://learn.microsoft.com/en-us/previous-versions/commerce-server/ee823878(v=cs.20">https://learn.microsoft.com/en-us/previous-versions/commerce-server/ee823878(v=cs.20</a>)?redirectedfrom=MSDN</p>
+<p>The STRIDE Threat Model. Available at <a class="reference external" href="https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats#stride-model">https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats#stride-model</a></p>
 </aside>
 <aside class="footnote brackets" id="id23" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">5</a><span class="fn-bracket">]</span></span>
 <p>MITRE ATT&amp;CK. Available at <a class="reference external" href="https://attack.mitre.org/">https://attack.mitre.org/</a></p>
+</aside>
+<aside class="footnote brackets" id="id24" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">6</a><span class="fn-bracket">]</span></span>
+<p>Gymrek, M., McGuire, A. L., Golan, D., Halperin, E., &amp; Erlich, Y. (2013). Identifying personal genomes by surname inference. Science, 339(6117), 321-324.</p>
 </aside>
 </aside>
 </section>
