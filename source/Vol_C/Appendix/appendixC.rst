@@ -31,9 +31,9 @@ Therefore, a comprehensive list of interventions and answers to Question 3 will 
 Genomic Data Threat Modeling for Privacy
 ----------------------------------------
 
-Key characteristics of privacy threats are a superset of the characteristics of cybersecurity threats. Cybersecurity threats typically involve the actions of a malicious entity that is external to the system proper. This can be true of privacy threats as well, but not necessarily. While privacy threats can be active, they can also involve inactions, such as a failure to provide relevant information to direct data subjects or to obtain their consent for the collection and use of their data. Malicious privacy threats are certainly not unheard of, but privacy threats are just as often side effects of the pursuit of other objectives. Additionally, while threat actors can be external entities, sometimes it is the system itself, operating as designed, that poses the threat. One such privacy threat is insufficient de-identification, where the identity of an individual in a sensitive dataset, such as a rare disease database, can be determined using metadata and information from open-access or controlled-access genomic databases [Ref15]_.
+Key characteristics of privacy threats are a superset of the characteristics of cybersecurity threats. Cybersecurity threats typically involve the actions of a malicious entity that is external to the system proper. This can be true of privacy threats as well, but not necessarily. While privacy threats can be active, they can also involve inactions, such as a failure to provide relevant information to direct data subjects or to obtain their consent for the collection and use of their data. Malicious privacy threats are certainly not unheard of, but privacy threats are just as often side effects of the pursuit of other objectives. Additionally, while threat actors can be external entities, sometimes it is the system itself, operating as designed, that poses the threat. One such privacy threat is surname inference, where some aspects of an identity for an individual a dataset could determined linking multiple datasets with genomic databases [6]_.
 
-As a result of these possibilities, privacy threat modeling must adopt a broader perspective than cybersecurity threat modeling. This broader perspective is reflected in the principal tools employed – the NIST PRAM [Ref1]_, LINDDUN [Ref2]_, and MITRE PANOPTIC [Ref3]_– each of which are described in the following subsections. Two of those tools, LINDDUN and PANOPTIC, were also selected because they roughly mirror the orientations of the tools – STRIDE [4]_ and MITRE ATT&CK [5]_ respectively – that were used for the cybersecurity threat modeling in NIST CSWP 35 [Ref6]_.
+As a result of these possibilities, privacy threat modeling must adopt a broader perspective than cybersecurity threat modeling. This broader perspective is reflected in the principal tools employed – the NIST PRAM [Ref1]_, LINDDUN [Ref2]_, and MITRE PANOPTIC [Ref3]_ – each of which are described in the following subsections. Two of those tools, LINDDUN and PANOPTIC, were also selected because they roughly mirror the orientations of the tools – STRIDE [4]_ and MITRE ATT&CK [5]_ respectively – that were used for the cybersecurity threat modeling in NIST CSWP 35 [Ref7]_.
 
 LINDDUN
 ~~~~~~~
@@ -122,7 +122,7 @@ The NIST PRAM [Ref1]_ is a product of NIST’s Privacy Engineering Program. It i
 
 4. Selecting Controls
 
-The PRAM also leverages a non-exhaustive privacy risk model consisting of defined “Problematic Data Actions” – particular manifestations of the higher-level data actions corresponding to stages of the information life cycle, which could enable adverse effects for individuals – and “Problems for Individuals,” those adverse consequences. The PRAM is intended to help ensure systems reflect the PEOs listed in `Privacy Overview <../Introduction.html#privacy-overview>`__.
+The PRAM also leverages a non-exhaustive privacy risk model consisting of defined “Problematic Data Actions” – particular manifestations of the higher-level data actions corresponding to stages of the information life cycle, which could enable adverse effects for individuals – and “Problems for Individuals,” those adverse consequences. The PRAM is intended to help ensure systems reflect the PEOs listed in `Privacy Overview <../Introduction.html#privacy-landscape>`__.
 
 As a risk modeling tool, the PRAM is broader than threat modeling. However, aspects of it can be readily adapted to directly accommodate privacy threat modeling. Therefore, the first two worksheets enumerated above were modified as necessary and used as the principal means of documenting the threat modeling described in this paper.
 
@@ -154,13 +154,17 @@ When answering Question 3 (What are we going to do about it?) of the Four Questi
    The MITRE Corporation and Medical Device Innovation Consortium (MDIC) (2021) Playbook for Threat Modeling Medical Devices. Available at https://www.mitre.org/sites/default/files/2021-11/Playbook-for-Threat-Modeling-Medical-Devices.pdf 
 
 .. [2]
-   Shostack A (2014) Threat Modeling: Designing for Security (Wiley, Hoboken, NJ) 1st Ed. Available at https://www.wiley.com/en-us/Threat+Modeling%3A+Designing+Security-p-9781118809990 
+   Shostack, Adam. Threat modeling: Designing for security. John wiley & sons, 2014.
 
 .. [3]
    https://shostack.org/about/adam
 
 .. [4]
-   The STRIDE Threat Model. Available at https://learn.microsoft.com/en-us/previous-versions/commerce-server/ee823878(v=cs.20)?redirectedfrom=MSDN  
+   The STRIDE Threat Model. Available at https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats#stride-model
 
 .. [5]
    MITRE ATT&CK. Available at https://attack.mitre.org/
+
+.. [6]
+   Gymrek, M., McGuire, A. L., Golan, D., Halperin, E., & Erlich, Y. (2013). Identifying personal genomes by surname inference. Science, 339(6117), 321-324.
+   
