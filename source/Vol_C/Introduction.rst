@@ -68,7 +68,7 @@ Threat Modeling Overview
 
 Threat modeling can support a broad stakeholder base who can then integrate the results into their larger and more specific risk modeling and management efforts. 
 
-The NCCoE team used the Four Question Framework, illustrated in the Appendix Figure 1, to structure the threat modeling process by answering: 
+The NCCoE team used the Four Question Framework, illustrated in the `Appendix Figure 1 <Appendix/appendixC.html>`_, to structure the threat modeling process by answering: 
 
 1) "What are we working on?"
 2) "What could go wrong?"  

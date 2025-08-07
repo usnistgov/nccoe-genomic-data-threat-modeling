@@ -12,7 +12,7 @@ Four Question Framework
 
    Appendix Figure 1. Visualization of the Four Question Framework for Threat Modeling
 
-This figure illustrates The Four Questions Framework for Threat Modeling. It starts with Question 1: What are we working on? From there, Question 2 is What could go wrong? Question 3 is What are we going to do about it? And Question 4 is Did we do a good job? The questions interconnect and will be revisited iteratively to improve the results.
+This figure illustrates The Four Questions Framework for Threat Modeling. It starts with Question 1: "What are we working on?" from there, Question 2: "What could go wrong?", then Question 3: "What are we going to do about it?" and finally Question 4: "Did we do a good job?". The questions interconnect and will be revisited iteratively to improve the results.
 
 It is expected that users of this process aiming to leverage the outputs documented in this paper will modify and adjust them to reflect differences between their environments and the baseline one described here. In particular, this threat model is intended for various stakeholders who have differing priorities with respect to the same threats. Organizations will choose specific responses, including interventions, depending on:
 
@@ -33,7 +33,7 @@ Genomic Data Threat Modeling for Privacy
 
 Key characteristics of privacy threats are a superset of the characteristics of cybersecurity threats. Cybersecurity threats typically involve the actions of a malicious entity that is external to the system proper. This can be true of privacy threats as well, but not necessarily. While privacy threats can be active, they can also involve inactions, such as a failure to provide relevant information to direct data subjects or to obtain their consent for the collection and use of their data. Malicious privacy threats are certainly not unheard of, but privacy threats are just as often side effects of the pursuit of other objectives. Additionally, while threat actors can be external entities, sometimes it is the system itself, operating as designed, that poses the threat. One such privacy threat is surname inference, where some aspects of an identity for an individual a dataset could determined linking multiple datasets with genomic databases [6]_.
 
-As a result of these possibilities, privacy threat modeling must adopt a broader perspective than cybersecurity threat modeling. This broader perspective is reflected in the principal tools employed – the NIST PRAM [Ref1]_, LINDDUN [Ref2]_, and MITRE PANOPTIC [Ref3]_ – each of which are described in the following subsections. Two of those tools, LINDDUN and PANOPTIC, were also selected because they roughly mirror the orientations of the tools – STRIDE [4]_ and MITRE ATT&CK [5]_ respectively – that were used for the cybersecurity threat modeling in NIST CSWP 35 [Ref7]_.
+As a result of these possibilities, privacy threat modeling must adopt a broader perspective than cybersecurity threat modeling. This broader perspective is reflected in the principal tools employed --- the NIST PRAM [Ref1]_, LINDDUN [Ref2]_, and MITRE PANOPTIC [Ref3]_ --- each of which are described in the following subsections. Two of those tools, LINDDUN and PANOPTIC, were also selected because they roughly mirror the orientations of the tools --- STRIDE [4]_ and MITRE ATT&CK [5]_ respectively --- that were used for the cybersecurity threat modeling in NIST CSWP 35 [Ref7]_.
 
 LINDDUN
 ~~~~~~~
@@ -66,7 +66,7 @@ Just as LINDDUN [Ref2]_ roughly mirrors STRIDE, PANOPTIC [Ref3]_ roughly mirrors
    +--------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | **ID** | **Contextual Domain** | **Definition**                                                                                                                                                       |
    +========+=======================+======================================================================================================================================================================+
-   | PC01   | Environment           | The type of contextual domain in which data actions occur.                                                                                                           |
+   | PC01   | Environment           | The type of contextual domain in which data actions occur                                                                                                            |
    +--------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | PC02   | Distribution          | How many entities with which the information holder shares information                                                                                               |
    +--------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -122,7 +122,7 @@ The NIST PRAM [Ref1]_ is a product of NIST’s Privacy Engineering Program. It i
 
 4. Selecting Controls
 
-The PRAM also leverages a non-exhaustive privacy risk model consisting of defined “Problematic Data Actions” – particular manifestations of the higher-level data actions corresponding to stages of the information life cycle, which could enable adverse effects for individuals – and “Problems for Individuals,” those adverse consequences. The PRAM is intended to help ensure systems reflect the PEOs listed in `Privacy Overview <../Introduction.html#privacy-landscape>`__.
+The PRAM also leverages a non-exhaustive privacy risk model consisting of defined “Problematic Data Actions” --- particular manifestations of the higher-level data actions corresponding to stages of the information life cycle, which could enable adverse effects for individuals --- and “Problems for Individuals,” those adverse consequences. The PRAM is intended to help ensure systems reflect the PEOs listed in `Privacy Overview <../Introduction.html#privacy-landscape>`__.
 
 As a risk modeling tool, the PRAM is broader than threat modeling. However, aspects of it can be readily adapted to directly accommodate privacy threat modeling. Therefore, the first two worksheets enumerated above were modified as necessary and used as the principal means of documenting the threat modeling described in this paper.
 
