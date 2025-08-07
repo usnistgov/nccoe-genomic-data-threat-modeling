@@ -29,7 +29,7 @@ This appendix summarizes the methodology presented in the body of the paper for 
 
 *Question 2: What could go wrong?*
 
-6.  Using the Assess System Design sheet in Worksheet 2, document each DFD segment – source, flow, destination – including data actions and relevant context. If preferred, use a separate sheet for each DFD.
+6.  Using the Assess System Design sheet in Worksheet 2, document each DFD segment --- source, flow, destination --- including data actions and relevant context. If preferred, use a separate sheet for each DFD.
 
 7.  Identify potential LINDDUN threats for each dataflow segment entry using the LINDDUN threat trees. Ensure that all identified threats are defined from the perspective of the data subject. Create duplicate entries to accommodate multiple threats.
 
@@ -53,7 +53,7 @@ This appendix summarizes the methodology presented in the body of the paper for 
 
     c. Rank order the threats by sorting on computed prioritization values (multiplying the feasibility-difficulty value by the LINDDUN threat weight). List threats from highest to lowest value.
 
-12. Determine threat responses – eliminate, disrupt, transfer, or accept – starting from the highest priority threat and moving down the list.
+12. Determine threat responses --- eliminate, disrupt, transfer, or accept --- starting from the highest priority threat and moving down the list.
 
 13. If opting to disrupt a threat:
 
